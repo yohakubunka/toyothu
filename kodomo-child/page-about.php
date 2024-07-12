@@ -152,35 +152,35 @@
         </div>
     </section>
 
-    <!-- ギャラリー -->
-    <section class="gallery">
-        <div class="title glitter">
-            <h2 class="icon"><img
-                    src="<?php echo get_stylesheet_directory_uri(); ?>/image/SVG/icon/gallery_icon.svg" />ギャラリー</h2>
+<!-- ギャラリー -->
+<section class="gallery">
+    <div class="title glitter">
+        <h2 class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/image/SVG/icon/gallery_icon.svg" />ギャラリー</h2>
+    </div>
+    <div class="gallery__slide gallery-slick">
+        <?php
+        $gallery_group = SCF::get('childrens_about_sec_gallery');
+        foreach ($gallery_group as $fields) :
+            $gallery_text = isset($fields['childrens_about_sec_gallery_text']) ? $fields['childrens_about_sec_gallery_text'] : '';
+            $gallery_imgurl = wp_get_attachment_image_src($fields['childrens_about_sec_gallery_img'], 'full');
+            $img_src = isset($gallery_imgurl[0]) ? $gallery_imgurl[0] : '';
+        ?>
+        <div class="gallery-box">
+            <img class="corner" src="<?= esc_url($img_src) ?>" alt="ギャラリー">
+            <p><?php echo esc_html($gallery_text); ?></p>
         </div>
-        <div class="gallery__slide gallery-slick">
-            <?php
-			$gallery_group = SCF::get('childrens_about_sec_gallery');
-			foreach ($gallery_group as $fields) :
-				$gallery_item = get_post_meta(get_the_ID(), 'childrens_about_sec_gallery_text');
-				$gallery_imgurl = wp_get_attachment_image_src($fields['childrens_about_sec_gallery_img'], 'full');
-			?>
-            <div class="gallery-box">
-                <img class="corner" src="<?= $gallery_imgurl[0] ?>" alt="ギャラリー">
-                <p><?php echo $fields['childrens_about_sec_gallery_text']; ?></p>
-            </div>
-            <?php endforeach; ?>
-        </div>
-        <div class="button first-box">
-            <?php $image_url = wp_get_attachment_url(get_post_meta(get_the_ID(), 'childrens_about_sec_gallery_floor')[0]); ?>
-            <?php if ($image_url != "") : ?>
-            <a href="<?= $image_url ?>" class="external <?php if ($image_url == "") echo "preparation" ?>"
-                target="_blank">フロアマップ</a>
-            <?php else : ?>
-            <?php endif; ?>
-        </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="button first-box">
+        <?php 
+        $image_id = get_post_meta(get_the_ID(), 'childrens_about_sec_gallery_floor', true);
+        $image_url = !empty($image_id) ? wp_get_attachment_url($image_id) : '';
+        if ($image_url) : ?>
+        <a href="<?= esc_url($image_url) ?>" class="external" target="_blank">フロアマップ</a>
+        <?php endif; ?>
+    </div>
+</section>
 
-    </section>
 
     <!-- 施設概要 -->
     <section class="facility last">

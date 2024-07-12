@@ -12,61 +12,68 @@
             </h2>
         </div>
         <div class="back top-news">
-            <div class="twoflex box">
-                <?php if (have_posts()) : ?>
-                <?php
-          $args = array(
+    <div class="twoflex box">
+        <?php if (have_posts()) : ?>
+        <?php
+        $args = array(
             'posts_per_page' => 4,
-          );
-          $posts = get_posts($args);
-          ?>
-                <?php foreach ($posts as $post) : setup_postdata($post); ?>
-                <article class="twoflex-box first-box">
-                    <a href="<?php the_permalink(); ?>" class="article-inner">
-                        <div class="article-img">
-                            <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('thumbnail'); ?>
-                            <?php else : ?>
-                            <?php if (get_site_multi() == "ゆたか認定こども園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/yutaka.svg" />
-                            <?php elseif (get_site_multi() == "泉の杜保育園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/izuminomori.svg" />
-                            <?php elseif (get_site_multi() == "世田谷１丁目ゆたか園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/setagaya.svg" />
-                            <?php elseif (get_site_multi() == "多気の杜こども園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/takinomori.svg" />
-                            <?php elseif (get_site_multi() == "こどもの杜ゆたか園") : ?>
-                            <img
-                                src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/kodomonomori.svg" />
-                            <?php elseif (get_site_multi() == "みらいの森ゆたか園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/mirainomori.svg" />
-                            <?php elseif (get_site_multi() == "杜の街ゆたか園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/morinomati.svg" />
-                            <?php elseif (get_site_multi() == "明和ゆたか園") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/meiwa.svg" />
-                            <?php elseif (get_site_multi() == "第２明和ゆたか園") : ?>
-                            <img
-                                src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/meiwa_second.svg" />
-                            <?php elseif (get_site_multi() == "斎宮Babyroom") : ?>
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/itukinomiya.svg" />
-                            <?php endif; ?>
-                            <?php endif; ?>
-                        </div>
-                        <div class="article-text">
-                            <h3><?= the_title(); ?></h3>
-                            <ul>
-                                <li><?= get_the_date(); ?></li>
-                                <li><?php $category = get_the_category();
-                        echo $category[0]->cat_name; ?></li>
-                            </ul>
-                        </div>
-                    </a>
-                </article>
-                <?php endforeach ?>
-                <?php else : ?>
-                <?php endif; ?>
-            </div>
-        </div>
+        );
+        $posts = get_posts($args);
+        ?>
+        <?php foreach ($posts as $post) : setup_postdata($post); ?>
+        <article class="twoflex-box first-box">
+            <a href="<?php the_permalink(); ?>" class="article-inner">
+                <div class="article-img">
+                    <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                    <?php else : ?>
+                    <?php $site_multi = get_site_multi(); ?>
+                    <?php if ($site_multi == "ゆたか認定こども園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/yutaka.svg" />
+                    <?php elseif ($site_multi == "泉の杜保育園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/izuminomori.svg" />
+                    <?php elseif ($site_multi == "世田谷１丁目ゆたか園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/setagaya.svg" />
+                    <?php elseif ($site_multi == "多気の杜こども園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/takinomori.svg" />
+                    <?php elseif ($site_multi == "こどもの杜ゆたか園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/kodomonomori.svg" />
+                    <?php elseif ($site_multi == "みらいの森ゆたか園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/mirainomori.svg" />
+                    <?php elseif ($site_multi == "杜の街ゆたか園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/morinomati.svg" />
+                    <?php elseif ($site_multi == "明和ゆたか園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/meiwa.svg" />
+                    <?php elseif ($site_multi == "第２明和ゆたか園") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/meiwa_second.svg" />
+                    <?php elseif ($site_multi == "斎宮Babyroom") : ?>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/image/png/common/itukinomiya.svg" />
+                    <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                <div class="article-text">
+                    <h3><?php the_title(); ?></h3>
+                    <ul>
+                        <li><?php echo get_the_date(); ?></li>
+                        <li>
+                            <?php 
+                            $category = get_the_category(); 
+                            if (!empty($category)) {
+                                echo $category[0]->cat_name; 
+                            }
+                            ?>
+                        </li>
+                    </ul>
+                </div>
+            </a>
+        </article>
+        <?php endforeach; wp_reset_postdata(); ?>
+        <?php else : ?>
+        <p>投稿がありません。</p>
+        <?php endif; ?>
+    </div>
+</div>
+
         <div class="button first-box">
             <a href="<?= home_url() ?>/news">一覧を見る<?php get_template_part('image/SVG/icon/button_icon') ?></a>
         </div>
