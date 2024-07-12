@@ -1,0 +1,1194 @@
+main {
+  background-image: url(../images/bg-repeat.png);
+  background-position: center, center;
+  background-repeat: repeat-y;
+  @media screen and(min-width:1920px) {
+    background-size: 100%;
+  }
+}
+.mv {
+  position: relative;
+  //不要な場合削除---------
+  @include sp {
+    padding-bottom: 40px;
+  }
+  //----------------------
+  .houjin-mv {
+    position: relative;
+    &.mv-pc {
+      @include sp {
+        display: none;
+      }
+    }
+    &.mv-sp {
+      display: none;
+      @include sp {
+        display: block;
+      }
+    }
+    .slick-slide {
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $color6;
+        opacity: 0.15;
+      }
+    }
+    .slick-dots {
+      bottom: 40px;
+      @include md {
+        bottom: -44px;
+      }
+      li {
+        margin: 0 8px;
+        button {
+          &::before {
+            font-size: 1.6rem;
+            color: $color8 !important;
+            opacity: 1;
+            @include sp {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+      .slick-active {
+        button {
+          &::before {
+            color: $color1 !important;
+          }
+        }
+      }
+    }
+    .slick-next,
+    .slick-prev {
+      display: none !important;
+    }
+    &.slick-dotted.slick-slider {
+      margin-bottom: 0;
+    }
+  }
+  .logo {
+    @include flex();
+    position: absolute;
+    bottom: 160px;
+    left: 20%;
+    width: 100%;
+    max-width: 600px;
+    @media screen and(max-width:1360px) {
+      left: 10%;
+    }
+    @include xl {
+      bottom: 80px;
+      left: 45px;
+      max-width: 510px;
+    }
+    @include md {
+      bottom: 40px;
+      left: 16px;
+      max-width: 390px;
+    }
+    @include sp {
+      bottom: 80px;
+      max-width: 255px;
+    }
+    .pc-logo {
+      @include sp {
+        display: none;
+      }
+    }
+    .sp-logo {
+      display: none;
+      @include sp {
+        display: block;
+      }
+    }
+    .logo-txt {
+      position: absolute;
+      bottom: 95px;
+      left: 200px;
+      font-size: 5.6rem;
+      letter-spacing: 0;
+      line-height: 1.2em;
+      color: $color4;
+      font-family: "Yusei Magic", sans-serif;
+      text-shadow: 3px 3px 0px $color1, -3px 3px 0px $color1, 3px -3px 0px $color1, -3px -3px 0px $color1,
+        3px 0px 0px $color1, 0px 3px 0px $color1, -3px 0px 0px $color1, 0px -3px 0px $color1;
+      @include xl {
+        bottom: 85px;
+        left: 176px;
+        font-size: 4.8rem;
+      }
+      @include xl {
+        bottom: 80px;
+      }
+      @include md {
+        bottom: 65px;
+        left: 132px;
+        font-size: 3.6rem;
+        text-shadow: 2px 2px 0px $color1, -2px 2px 0px $color1, 2px -2px 0px $color1, -2px -2px 0px $color1,
+          2px 0px 0px $color1, 0px 2px 0px $color1, -2px 0px 0px $color1, 0px -2px 0px $color1;
+      }
+      @include sp {
+        bottom: 45px;
+        left: 88px;
+        font-size: 2.4rem;
+        text-shadow: 1px 1px 0px $color1, -1px 1px 0px $color1, 1px -1px 0px $color1, -1px -1px 0px $color1,
+          1px 0px 0px $color1, 0px 1px 0px $color1, -1px 0px 0px $color1, 0px -1px 0px $color1;
+      }
+    }
+  }
+}
+.follow-btn {
+  position: fixed;
+  z-index: 5;
+  right: 16px;
+  bottom: 40px;
+  @include md {
+    @include flex();
+    right: inherit;
+    bottom: 0;
+    width: 100%;
+  }
+  .kyusyoku-btn,
+  .taisyoku-btn {
+    width: 100%;
+    max-width: 176px;
+    height: 56px;
+    background-color: $color1;
+    border-radius: 50px;
+    box-shadow: 0 0 16px 0 $color7;
+    @include md {
+      max-width: 100%;
+      background-color: $color9;
+      border-radius: inherit;
+      box-shadow: inherit;
+    }
+    a {
+      @include flex(center, center);
+      width: 176px;
+      height: 56px;
+      @include md {
+        width: 100%;
+      }
+      .n-txt {
+        @include md {
+          color: $color1;
+        }
+      }
+      svg {
+        margin-right: 4px;
+        path {
+          fill: $color9;
+          @include md {
+            fill: $color1;
+          }
+        }
+      }
+    }
+  }
+  .kyusyoku-btn {
+    margin-bottom: 24px;
+    @include md {
+      margin-bottom: 0;
+    }
+  }
+  .partition {
+    display: none;
+    @include md {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      width: 2px;
+      height: 32px;
+      background-color: $color1;
+    }
+  }
+}
+#section-houjin-news {
+  .page-width {
+    background-image: url(../images/flower.svg), url(../images/grass.svg);
+    background-position: right 134px bottom, right 90px bottom;
+    background-repeat: no-repeat;
+    @media screen and(max-width:1190px) {
+      background-position: right 103px bottom, right 62px bottom;
+    }
+    @media screen and(max-width:1100px) {
+      background-image: inherit;
+    }
+  }
+  .houjin-news {
+    &__content {
+      max-width: 802px;
+      height: 560px;
+      margin: 0 auto;
+      @include sm {
+        height: 400px;
+      }
+      &--box {
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: 8px;
+        &::-webkit-scrollbar {
+          width: 4px;
+          height: 100px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: $color4;
+          border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: $color11;
+          border-radius: 10px;
+        }
+        .news-item {
+          position: relative;
+          padding-bottom: 32px;
+          margin-bottom: 32px;
+          border-bottom: 4px solid;
+          border-image-source: url(../images/line.png);
+          border-image-slice: 0 0 100%;
+          border-image-repeat: unset;
+          border-image-width: auto;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          @include sm {
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-image-repeat: repeat;
+            border-image-slice: 0 0 97%;
+          }
+          .date-category {
+            @include flex();
+            padding-bottom: 16px;
+            @include sm {
+              flex-direction: column;
+              padding-bottom: 8px;
+            }
+            &__date {
+              padding-right: 32px;
+              @include sm {
+                padding-right: 0;
+              }
+            }
+          }
+          &__title {
+            padding-bottom: 16px;
+            @include sm {
+              padding-bottom: 8px;
+            }
+          }
+          &__content {
+            p {
+              font-family: "Noto Sans JP", sans-serif;
+              font-weight: 500;
+              color: $color2;
+              font-size: 1.8rem;
+              letter-spacing: 0.08em;
+              line-height: 1.7em;
+              @include lg {
+                font-size: 1.6rem;
+              }
+              @include sp {
+                font-size: 1.4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#section-houjin-message {
+  .houjin-message {
+    &__content {
+      .sub-ttl {
+        br {
+          @include sm {
+            display: none;
+          }
+        }
+      }
+      &--flex {
+        @include flex(between, start);
+        padding-top: 40px;
+        @include md {
+          display: block;
+        }
+        @include sp {
+          padding-top: 16px;
+        }
+        .author-img,
+        .message-box {
+          width: 100%;
+          max-width: calc(100% / 2);
+          @include md {
+            max-width: 100%;
+          }
+        }
+        .author-img {
+          padding-top: 315px;
+          width: 100%;
+          background-repeat: no-repeat;
+          border-radius: 40px;
+          background-position: center center;
+          @include md {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+          }
+          @include sm {
+            padding-top: 52%;
+            background-size: cover;
+            border-radius: 20px;
+          }
+        }
+        .message-box {
+          margin-left: 48px;
+          @include lg {
+            margin-left: 32px;
+          }
+          @include md {
+            margin-left: 0;
+            padding-top: 24px;
+          }
+          .message-author {
+            padding-top: 24px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+#section-houjin-facility {
+  .houjin-facility {
+    &__content {
+      &--category {
+        .category-flex {
+          @include flex(between, start);
+          flex-wrap: wrap;
+          width: 100%;
+          max-width: 648px;
+          margin: 0 auto;
+          padding: 24px 0 48px 0;
+          @include sm {
+            display: block;
+          }
+          li {
+            width: 100%;
+            max-width: 312px;
+            @include sm {
+              max-width: 256px;
+            }
+            &:nth-of-type(1) {
+              @include sm {
+                margin: 0 auto;
+              }
+            }
+            &:nth-of-type(2) {
+              margin-top: 0;
+            }
+            &:nth-of-type(3) {
+              margin: 24px auto 0 auto;
+            }
+            &:nth-of-type(4) {
+              margin-top: 24px;
+            }
+            &:nth-of-type(even) {
+              margin-left: 24px;
+              @include sm {
+                margin: 24px auto 0 auto;
+              }
+            }
+          }
+        }
+      }
+      &--box {
+        padding-bottom: 48px;
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+        .double-leaf {
+          div {
+            margin: 0 auto;
+            @include sm {
+              padding: 0 6px;
+            }
+            svg {
+              path {
+                fill: $color4;
+              }
+            }
+          }
+        }
+        .facility-flex {
+          .facility-box {
+            position: relative;
+            .tag-content {
+              position: absolute;
+              padding: 8px 8px 0 8px;
+              ul {
+                .tag-name {
+                  margin-bottom: 8px;
+                  padding: 8px 16px;
+                  display: inline-block;
+                  background-color: $color4;
+                  border-radius: 100px;
+                  @include sp {
+                    padding: 4px 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#section-houjin-support {
+  .houjin-support {
+    &__content {
+      &--top {
+        .n-txt_m {
+          padding-top: 24px;
+        }
+        .circle-flex {
+          @include flex(between, center);
+          width: 100%;
+          max-width: 530px;
+          margin: 0 auto;
+          padding: 24px 0 48px 0;
+          @include sp {
+            flex-wrap: wrap;
+            max-width: 256px;
+            padding: 16px 0 32px 0;
+          }
+          .circle {
+            @include flex(center, center);
+            flex-shrink: 0;
+            width: 160px;
+            height: 160px;
+            background-color: $color1;
+            border-radius: 100%;
+            text-align: center;
+            &:nth-of-type(1) {
+              @include sp {
+                margin-right: 8px;
+              }
+            }
+            &:nth-of-type(2) {
+              @include sp {
+                margin-left: 8px;
+              }
+            }
+            &:nth-of-type(3) {
+              @include sp {
+                margin: 16px auto 0 auto;
+              }
+            }
+            @include sm {
+              width: 145px;
+              height: 145px;
+            }
+            @include sp {
+              width: 120px;
+              height: 120px;
+            }
+          }
+        }
+      }
+      &--bottom {
+        .facility-flex {
+          padding-top: 24px;
+        }
+      }
+    }
+  }
+}
+#section-houjin-activity {
+  .houjin-activity {
+    &__content {
+      @include flex(between, 0);
+      @include lg {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      @include md {
+        display: block;
+      }
+      &--box {
+        width: 100%;
+        max-width: calc(100% / 3);
+        @include lg {
+          max-width: calc((100% / 2) - 16px);
+        }
+        @include md {
+          max-width: 562px;
+        }
+        @include sp {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+        &:nth-of-type(1) {
+          margin-right: 12px;
+          @include lg {
+            margin-right: 16px;
+          }
+          @include md {
+            margin: 0 auto;
+          }
+        }
+        &:nth-of-type(2) {
+          margin: 0 12px;
+          @include lg {
+            margin-right: 0;
+            margin-left: 16px;
+          }
+          @include md {
+            margin: 24px auto 0 auto;
+          }
+        }
+        &:nth-of-type(3) {
+          margin-left: 12px;
+          @include lg {
+            margin: 32px auto 0 auto;
+          }
+          @include md {
+            margin: 24px auto 0 auto;
+          }
+        }
+        .active-ttl {
+          padding-bottom: 16px;
+          text-align: center;
+          @include sp {
+            padding-bottom: 8px;
+          }
+        }
+        .active-txt {
+          padding-top: 16px;
+          @include sp {
+            padding-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+#section-houjin-history {
+  .houjin-history {
+    &__content {
+      width: 100%;
+      max-width: 917px;
+      margin: 0 auto;
+      ul {
+        position: relative;
+        li {
+          position: relative;
+          padding-bottom: 24px;
+          @include sp {
+            padding-bottom: 16px;
+          }
+          &:last-of-type {
+            padding-bottom: 0;
+          }
+          div {
+            .history-year {
+              @include flex(start, center);
+              padding-bottom: 4px;
+              .list {
+                width: 16px;
+                height: 16px;
+                display: block;
+                flex-shrink: 0;
+                margin-right: 8px;
+                border-radius: 20px;
+                background: $color4;
+              }
+            }
+            .history-txt {
+              padding-left: 24px;
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 7px;
+            width: 2px;
+            height: 100%;
+            display: block;
+            background-color: $color4;
+          }
+          &:last-of-type {
+            &::before {
+              height: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#section-houjin-info {
+  .houjin-info {
+    &__content {
+      &--about {
+        padding-bottom: 48px;
+        @include sp {
+          padding-bottom: 32px;
+        }
+        .about-box {
+          dl {
+            @include flex();
+            position: relative;
+            padding-bottom: 8px;
+            margin-bottom: 32px;
+            border-bottom: 4px solid;
+            border-image-source: url(../images/line.png);
+            border-image-slice: 0 0 100%;
+            border-image-repeat: unset;
+            border-image-width: auto;
+            @include sm {
+              display: block;
+              margin-bottom: 16px;
+              padding-bottom: 8px;
+              border-image-repeat: repeat;
+              border-image-slice: 0 0 97%;
+            }
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+            dt {
+              width: 100%;
+              max-width: 80px;
+              margin-right: 24px;
+              @include sp {
+                padding-bottom: 4px;
+              }
+            }
+            .address {
+              a {
+                img {
+                  max-width: 20px;
+                  margin-left: 8px;
+                  @include lg {
+                    max-width: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &--plan{
+        padding-bottom: 48px;
+        @include sp {
+          padding-bottom: 32px;
+        }
+        .annotation{
+          width: 100%;
+          max-width: 736px;
+          margin: 0 auto;
+          padding-bottom: 24px;
+          text-align: center;
+        }
+        .disc-flex {
+          @include flex(between, 0);
+          flex-wrap: wrap;
+          @include md {
+            display: block;
+          }
+          li {
+            width: 100%;
+            max-width: calc((100% / 2) - 24px);
+            position: relative;
+            padding-bottom: 8px;
+            margin-top: 32px;
+            border-bottom: 4px solid;
+            border-image-source: url(../images/line.png);
+            border-image-slice: 0 0 100%;
+            border-image-repeat: repeat;
+            border-image-width: auto;
+            &:nth-of-type(1) {
+              margin-top: 0;
+            }
+            &:nth-of-type(2) {
+              margin-top: 0;
+              @include md {
+                margin-top: 32px;
+              }
+              @include sm {
+                margin-top: 16px;
+              }
+            }
+            &:nth-of-type(odd) {
+              margin-left: 0;
+              margin-right: 24px;
+              @include lg {
+                margin-right: 16px;
+              }
+              @include md {
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+            &:nth-of-type(even) {
+              margin-left: 24px;
+              margin-right: 0;
+              @include lg {
+                margin-left: 16px;
+              }
+              @include md {
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+            @include lg {
+              max-width: calc((100% / 2) - 16px);
+            }
+            @include md {
+              max-width: 100%;
+              margin-top: 32px;
+            }
+            @include sm {
+              margin-top: 16px;
+              padding-bottom: 8px;
+              border-image-repeat: repeat;
+              border-image-slice: 0 0 97%;
+            }
+            a {
+              svg {
+                margin-left: 8px;
+                display: inline-block;
+                vertical-align: middle;
+              }
+              &.blank {
+                @include flex(0, center);
+                svg {
+                  display: none;
+                }
+                &::after {
+                  content: "";
+                  background-image: url(../images/link.svg);
+                  background-repeat: no-repeat;
+                  width: 13px;
+                  height: 16px;
+                  margin-left: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &--disc {
+        .disc-flex {
+          @include flex(between, 0);
+          flex-wrap: wrap;
+          @include md {
+            display: block;
+          }
+          li {
+            width: 100%;
+            max-width: calc((100% / 2) - 24px);
+            position: relative;
+            padding-bottom: 8px;
+            margin-top: 32px;
+            border-bottom: 4px solid;
+            border-image-source: url(../images/line.png);
+            border-image-slice: 0 0 100%;
+            border-image-repeat: repeat;
+            border-image-width: auto;
+            &:nth-of-type(1) {
+              margin-top: 0;
+            }
+            &:nth-of-type(2) {
+              margin-top: 0;
+              @include md {
+                margin-top: 32px;
+              }
+              @include sm {
+                margin-top: 16px;
+              }
+            }
+            &:nth-of-type(odd) {
+              margin-left: 0;
+              margin-right: 24px;
+              @include lg {
+                margin-right: 16px;
+              }
+              @include md {
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+            &:nth-of-type(even) {
+              margin-left: 24px;
+              margin-right: 0;
+              @include lg {
+                margin-left: 16px;
+              }
+              @include md {
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+            @include lg {
+              max-width: calc((100% / 2) - 16px);
+            }
+            @include md {
+              max-width: 100%;
+              margin-top: 32px;
+            }
+            @include sm {
+              margin-top: 16px;
+              padding-bottom: 8px;
+              border-image-repeat: repeat;
+              border-image-slice: 0 0 97%;
+            }
+            a {
+              svg {
+                margin-left: 8px;
+                display: inline-block;
+                vertical-align: middle;
+              }
+              &.blank {
+                @include flex(0, center);
+                svg {
+                  display: none;
+                }
+                &::after {
+                  content: "";
+                  background-image: url(../images/link.svg);
+                  background-repeat: no-repeat;
+                  width: 13px;
+                  height: 16px;
+                  margin-left: 8px;
+                }
+              }
+            }
+          }
+        }
+        .annotation {
+          padding-top: 16px;
+          text-align: right;
+          @include sp {
+            padding-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+#section-houjin-contact {
+  .houjin-contact {
+    &__content {
+      &--txtlist {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-bottom: 24px;
+        li {
+          @include flex(0, baseline);
+          padding-bottom: 8px;
+          &:last-of-type {
+            padding-bottom: 0;
+          }
+          &::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            display: inline-block;
+            flex-shrink: 0;
+            background-color: $color4;
+            border-radius: 50px;
+          }
+        }
+      }
+      &--form {
+        .form-content {
+          margin-bottom: 24px;
+          .form-box {
+            padding-bottom: 8px;
+            margin-top: 32px;
+            border-bottom: 4px solid;
+            border-image-source: url(../images/line.png);
+            border-image-slice: 0 0 100%;
+            border-image-repeat: unset;
+            border-image-width: auto;
+            &:first-of-type {
+              margin-top: 0;
+            }
+            @include sm {
+              margin-top: 16px;
+              padding-bottom: 8px;
+              border-image-repeat: repeat;
+              border-image-slice: 0 0 97%;
+            }
+            .form-top {
+              padding-bottom: 16px;
+              @include sp {
+                padding-bottom: 8px;
+              }
+              span {
+                padding-left: 32px;
+                @include sp {
+                  padding-left: 16px;
+                }
+              }
+            }
+            .form-bottom {
+              .wpcf7-text {
+                width: 100%;
+                font-size: 1.8rem;
+                line-height: 1.5em;
+                letter-spacing: 0.08em;
+                @include sm {
+                  font-size: 1.6rem;
+                }
+                @include sp {
+                  font-size: 1.4rem;
+                }
+                &::placeholder {
+                  color: $color12;
+                }
+              }
+              .wpcf7-list-item {
+                position: relative;
+                margin-left: 0;
+                padding-right: 32px;
+                @include sp {
+                  padding-right: 24px;
+                }
+              }
+              input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+              }
+              .wpcf7-list-item-label:before {
+                content: "";
+                border-radius: 100%;
+                border: 1px solid $color2;
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: -2px;
+                margin-right: 8px;
+                vertical-align: middle;
+                text-align: center;
+                @include sm {
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+              input[type="radio"]:checked + .wpcf7-list-item-label:before {
+                background-color: $color2;
+              }
+              textarea {
+                width: 100% !important;
+                height: 240px;
+                font-size: 1.8rem;
+                line-height: 1.5em;
+                letter-spacing: 0.08em;
+                @include sm {
+                  font-size: 1.6rem;
+                }
+                @include sp {
+                  font-size: 1.4rem;
+                }
+                &::placeholder {
+                  color: $color12;
+                }
+              }
+            }
+          }
+        }
+        .privacy {
+          .privacy-inner {
+            height: 288px;
+            padding-right: 8px;
+            overflow-y: auto;
+            @include sm {
+              height: 240px;
+            }
+            .privacy-txt {
+              padding-bottom: 32px;
+              &:last-of-type {
+                padding-bottom: 0;
+              }
+              @include sp {
+                padding-bottom: 24px;
+              }
+            }
+          }
+          .privacy-inner::-webkit-scrollbar {
+            width: 4px;
+            border-radius: 10px;
+            background: $color11;
+          }
+          .privacy-inner::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .privacy-inner::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: $color4;
+          }
+        }
+        .agree {
+          padding: 24px 0 48px 0;
+          text-align: center;
+          @include sm {
+            padding: 24px 0 32px 0;
+          }
+          .wpcf7-list-item {
+            margin: 0 !important;
+            position: relative;
+            input {
+              position: absolute;
+              opacity: 0;
+            }
+            .wpcf7-list-item-label {
+              position: relative;
+              color: $color2;
+              font-size: 1.8rem;
+              letter-spacing: 0.08em;
+              line-height: 1.5em;
+              cursor: pointer;
+              @include sm {
+                font-size: 1.6rem;
+              }
+              @include sp {
+                font-size: 1.4rem;
+              }
+              &::before {
+                content: "";
+                position: relative;
+                margin-right: 8px;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                background-color: $color1;
+                border: 1px solid $color2;
+                @include sm {
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                top: 6px;
+                display: block;
+                width: 16px;
+                height: 16px;
+                opacity: 0;
+                background-color: $color2;
+                @include sm {
+                  width: 12px;
+                  height: 12px;
+                }
+              }
+            }
+            input[type="checkbox"]:checked + .wpcf7-list-item-label:after {
+              opacity: 1;
+            }
+            input[type="checkbox"]:checked + .wpcf7-list-item-label:before {
+              background-color: $color5;
+              border: inherit;
+            }
+          }
+        }
+        .submit {
+          position: relative;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 312px;
+          opacity: 0.5;
+          transition: 0.3s;
+          @include sm {
+            max-width: 256px;
+          }
+          input[type="submit"] {
+            @include flex(center, center);
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 312px;
+            height: 64px;
+            color: $color4;
+            border: solid 4px $color4;
+            border-radius: 100px;
+            font-family: "Noto Sans JP", sans-serif;
+            font-weight: 700;
+            font-size: 2.4rem;
+            letter-spacing: 0.08em;
+            line-height: 1.5em;
+            transition: 0.3s;
+            @include sm {
+              max-width: 256px;
+            }
+            @include sp {
+              font-size: 2rem;
+            }
+            &:hover {
+              color: $color1;
+              background-color: $color4;
+              transition: 0.3s;
+            }
+          }
+          &::after {
+            content: "";
+            width: 14px;
+            height: 24px;
+            display: block;
+            background-image: url(../images/rect.svg);
+            background-position: center, center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 20px;
+            right: 16px;
+            transition: 0.3s;
+          }
+          &:hover {
+            &::after {
+              content: "";
+              background-image: url(../images/w_rect.svg);
+              transition: 0.3s;
+            }
+          }
+          .wpcf7-spinner {
+            display: none;
+          }
+          &.opacity {
+            opacity: 1;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+_:lang(x) + _:-webkit-full-screen-document,
+.mv .logo .logo-txt {
+  @media screen and(max-width:768px) {
+    bottom: 120px;
+  }
+  @include sp {
+    bottom: 45px;
+  }
+}

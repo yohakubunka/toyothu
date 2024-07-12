@@ -1,0 +1,225 @@
+#about {
+	//保育理念
+	.policy{
+		.inner{
+			.center-back{
+				.center{
+					.shooting{
+						&::before{
+							margin-bottom: 30px;
+							@include sm{
+								margin-bottom: 0;
+							}
+						}
+						&::after{
+							margin-top: 30px;
+							@include sm{
+								margin-top: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//保育内容
+	.content{
+		.about-support{
+			.box{
+				&:last-child{
+					padding-bottom: 0;
+				}
+			}
+			.linebox{
+				&__inner{
+					&--pot{
+						max-width: 100%;
+						width: 100%;
+						@include flex(start,start,wrap,0,1);
+						position: relative;
+						margin-top: 40px;
+						.support-img{
+							width: 100%;
+							margin-bottom: 40px;
+							@include lg{
+								margin-bottom: 32px;
+							}
+							@include sm{
+								margin-bottom: 16px;
+							}
+							&:first-child{
+								max-width: calc(100% - (40px + 35%));
+								@include lg{
+									max-width: calc(100% - (32px + 35%));
+								}
+								@include sm{
+									max-width: calc(100% - (16px + 35%));
+								}
+							}
+							&:nth-child(2){
+								padding-bottom: 0;
+								max-width: calc(100% - (40px + 35%));
+								@include lg{
+									max-width: calc(100% - (32px + 35%));
+								}
+								@include sm{
+									max-width: calc(100% - (16px + 35%));
+								}
+							}
+							&:nth-child(3){
+								max-width: 35%;
+								position: absolute;
+								top:0;
+								right: 0;
+							}
+							&:last-child{
+								max-width: 35%;
+								padding-bottom: 0;
+								position: absolute;
+								bottom:0;
+								right: 0;
+							}
+						}
+					}
+				}
+				&:last-child{
+					.linebox__inner--pot{
+						.support-img{
+							&:first-child{
+								max-width: 35%;
+							}
+							&:nth-child(2){
+								max-width: 35%;
+							}
+							&:nth-child(3){
+								max-width: calc(100% - (40px + 35%));
+								@include lg{
+									max-width: calc(100% - (32px + 35%));
+								}
+								@include sm{
+									max-width: calc(100% - (16px + 35%));
+								}
+							}
+							&:last-child{
+								max-width: calc(100% - (40px + 35%));
+								@include lg{
+									max-width: calc(100% - (32px + 35%));
+								}
+								@include sm{
+									max-width: calc(100% - (16px + 35%));
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//ギャラリー
+	.gallery {
+		&__slide {
+			margin: 0;
+			padding-bottom: 40px;
+			.gallery-box {
+				p {
+					text-align: center;
+					padding-top: 8px;
+				}
+			}
+		}
+	}
+	//施設概要
+	.facility {
+		.summary {
+			&__pic {
+				margin: 0 auto;
+				@include flex(center, center,wrap);
+				padding-bottom: 40px;
+				@include sm {
+					@include flex(between, center, wrap);
+					padding-bottom: 16px;
+				}
+				li {
+					padding-right: 24px;
+					&:last-child {
+						padding-right: 0;
+					}
+					@include lg {
+						padding-right: 32px;
+					}
+					@include sm {
+						padding: 0;
+						max-width: calc((100% / 3) - 8px);
+						width: 100%;
+						padding-bottom: 16px;
+						text-align: center;
+					}
+					@include sp {
+						max-width: calc((100% / 2) - 8px);
+					}
+				}
+			}
+			&__list {
+				@include lg {
+					@include flex(center, center, 0, 0, 1);
+				}
+				ul {
+					max-width: 100%;
+					width: 100%;
+					@include flex(between,0,wrap);
+					@include lg {
+						max-width: 100%;
+					}
+					li {
+						max-width: calc(50% - 16px);
+						width: 100%;
+						margin-bottom: 32px;
+						padding: 0 0 8px 0;
+						@include flex(start, center);
+						position: relative;
+						@include lg{
+							max-width: 100%;
+						}
+						@include sm {
+							margin-bottom: 16px;
+						}
+						@include sp {
+							@include flex(start, start, 0, 0, 1);
+						}
+						&::after {
+							content: "";
+							max-width: 100%;
+							width: 100%;
+							height: 4px;
+							background-image: url(../image/SVG/decoration/facility_line.svg);
+							background-size: cover;
+							position: absolute;
+							bottom: 0;
+							@include lg{
+								background-size: contain;
+							}
+							@include sm {
+								background-size: auto;
+							}
+						}
+						span {
+							max-width: 108px;
+							width: 100%;
+							padding-right: 8px;
+						}
+						p{
+							width: auto;
+							@include sp{
+								width: 100%;
+								word-break: break-all;
+							}
+						}
+						a {
+							padding-left: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+.animation {
+    background: var(--childrens_color8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    min-height: calc(var(--vh, 1vh) * 100);
+    .parent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+      /*大きいサイズのハートの場所を指定*/
+      .item {
+        margin: 0;
+        position: absolute;
+        top: 28%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: anime1 1.4s ease 0.1s infinite alternate;
+        transform-origin: center;
+      }
+      @keyframes anime1 {
+        from {
+          transform: scale(0.8, 0.8);
+        }
+        to {
+          transform: scale(1, 1);
+        }
+      }
+      /*Sサイズのハートの場所を指定*/
+      .item02 {
+        margin: 0;
+        position: absolute;
+        top: -20%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: anime1 1.4s ease 0.1s infinite alternate;
+        transform-origin: center;
+      }
+      /*Mサイズのハートの場所を指定*/
+      .item03 {
+        margin: 0;
+        position: absolute;
+        top: -10%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: anime1 1.4s ease 0.1s infinite alternate;
+        transform-origin: center;
+      }
+      /*ハートの色変化*/
+      #heart {
+        animation: anime2 1.4s ease 0.1s infinite alternate;
+      }
+      #heart_s {
+        animation: anime2 1s ease 0.1s infinite alternate;
+      }
+      #heart_m {
+        animation: anime2 1.2s ease 0.1s infinite alternate;
+      }
+      @keyframes anime2 {
+        0%,
+        100% {
+          fill: #fa8072;
+        }
+        50% {
+          fill: #fa8072;
+          opacity: 50%;
+        }
+      }
+    }
+  }
+  

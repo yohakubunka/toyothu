@@ -1,0 +1,459 @@
+header {
+    max-width: 100%;
+    width: 100%;
+
+    @include lg {
+        padding-bottom: 40px;
+    }
+
+    //メニュー
+    .insidemenu,
+    .topmenu {
+        width: 100%;
+        transition: 0.5s;
+        top: 0;
+        z-index: 1;
+
+        &__inner {
+            max-width: 1148px;
+            width: 100%;
+            margin: 0 auto;
+            @include flex(between, center);
+
+            &--logo {
+                width: 148px;
+                height: 148px;
+            }
+
+            li {
+                a {
+                    @include flex(center, center, 0, 0, 1);
+
+                    p {
+                        padding-top: 8px;
+                        color: var(--childrens_color5);
+                    }
+                }
+            }
+        }
+    }
+
+    .topmenu {
+        @include absoluteCenterX;
+        padding-top: 32px;
+
+        @include xl {
+            display: none;
+        }
+    }
+
+    .tabmenu {
+        display: none;
+
+        @include xl {
+            @include absoluteCenterX;
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            margin: 32px 0 0 0 auto;
+            display: flex;
+        }
+
+        @include sp {
+            width: 160px;
+            height: 160px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .insidemenu {
+        max-width: 100%;
+        width: 100%;
+        padding: 32px;
+        @include flex(between, center);
+        background-color: var(--childrens_color4);
+
+        @include xl {
+            display: none;
+        }
+    }
+
+    //メインビジュアル
+    .mainvisual {
+        position: relative;
+
+        .visual-item {
+            max-width: 480px;
+            width: 100%;
+            height: 150px;
+            background: none;
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            transform: translateY(0);
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            z-index: 1;
+
+            @include lg {
+                max-width: 312px;
+                height: 98px;
+                background-size: contain;
+            }
+
+            @include sm {
+                max-width: 240px;
+                height: 75px;
+            }
+        }
+
+        &__inner {
+            position: relative;
+
+            &--slide {
+                max-width: 100%;
+                width: 100%;
+                position: relative;
+
+                .slick-slider {
+                    .slick-list {
+                        &::after {
+                            content: "";
+                            max-width: 100%;
+                            width: 100%;
+                            height: 100%;
+                            background-color: var(--childrens_color2);
+                            @include absoluteCenter;
+                        }
+                    }
+                }
+            }
+
+            .catch {
+                max-width: max-content;
+                width: 100%;
+                position: absolute;
+                left: 140px;
+                bottom: 242px;
+                @include flex(center, start);
+
+                &__copy {
+                    position: relative;
+                    width: 100%;
+                }
+
+                @include lg {
+                    left: 90px;
+                    bottom: 160px;
+                }
+
+                @include sm {
+                    left: 56px;
+                    bottom: 82px;
+                }
+            }
+        }
+    }
+
+    //ハンバーガーメニュー
+    .menubutton {
+        max-width: 56px;
+        width: 100%;
+        height: 56px;
+        position: fixed;
+        transition: 0.5s;
+        background: var(--childrens_color5);
+        border-radius: 100%;
+        top: 16px;
+        right: 16px;
+        z-index: 5;
+        @include flex(center, center);
+        transition: 0.5s;
+        box-shadow: 0 0 16px 0 rgb(38 51 59 / 20%);
+        cursor: pointer;
+
+        &__inner {
+            max-width: 24px;
+            width: 100%;
+            height: 20px;
+            position: relative;
+
+            span {
+                max-width: 24px;
+                width: 100%;
+                height: 4px;
+                position: absolute;
+                transition: 0.5s;
+                background-repeat: no-repeat;
+
+                &:first-of-type {
+                    background-image: url(../image/SVG/icon/sp_line01.svg);
+                    top: 0;
+                }
+
+                &:nth-of-type(2) {
+                    background-image: url(../image/SVG/icon/sp_line02.svg);
+                    top: calc(50% - 2px);
+                }
+
+                &:last-of-type {
+                    background-image: url(../image/SVG/icon/sp_line03.svg);
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    //ハンバーガーメニュー
+    .menubutton.clicked {
+        transition: 0.5s;
+        background: var(--childrens_color1);
+
+        .menubutton__inner {
+            span {
+                transition: 0.5s;
+
+                &:first-of-type {
+                    background-image: url(../image/SVG/icon/sp_click-line01.svg);
+                    transform: translateY(20px) rotate(-45deg);
+                    top: -12px;
+                }
+
+                &:nth-of-type(2) {
+                    opacity: 0;
+                }
+
+                &:last-of-type {
+                    background-image: url(../image/SVG/icon/sp_click-line03.svg);
+                    transform: translateY(-20px) rotate(45deg);
+                    bottom: -12px;
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        position: fixed;
+        z-index: 4;
+        background: #fff;
+        max-width: 480px;
+        width: 100%;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        transition: 0.5s;
+        background: var(--childrens_color1);
+
+        @include sp {
+            max-width: 375px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &__inner {
+            position: relative;
+
+            ol {
+                padding: 16px 64px 32px 64px;
+                background: var(--childrens_color4);
+
+                @include sp {
+                    padding: 16px 24px 24px 24px;
+                }
+
+                ul.mainmenu {
+                    @include flex(between, center, wrap);
+
+                    .home-top {
+                        width: 100%;
+                        padding-bottom: 24px;
+
+                        a {
+                            width: 100%;
+                            @include flex(center, center, 0, 0, 1);
+
+                            p {
+                                color: var(--childrens_color5);
+                                padding-top: 8px;
+                            }
+                        }
+                    }
+
+                    li {
+                        max-width: 166px;
+                        width: 100%;
+                        height: 90px;
+                        background-image: url(../image/SVG/backgrand/menu_frame.svg);
+                        margin-bottom: 24px;
+
+                        @include sp {
+                            max-width: calc(50% - 4px);
+                            margin-bottom: 16px;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                        }
+
+                        @include xs {
+                            height: 84px;
+                        }
+
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            @include flex(center, center, 0, 0, 1);
+                        }
+
+                        img {
+                            max-width: 28px;
+                            width: 100%;
+                            height: 24px;
+                            margin: 0 auto;
+
+                            @include xs {
+                                max-width: 20px;
+                                width: 100%;
+                                height: 20px;
+                            }
+                        }
+
+                        p {
+                            color: var(--childrens_color5);
+                            padding-top: 8px;
+                            line-height: 1em;
+
+                            span {
+                                padding-left: 8px;
+
+                                @include xs {
+                                    height: 20px;
+                                    max-width: 15px;
+                                    width: 100%;
+                                }
+
+                                svg {
+                                    @include xs {
+                                        max-width: 15px;
+                                        width: 100%;
+                                        height: 20px;
+                                    }
+
+                                    .cls-1 {
+                                        fill: var(--childrens_color5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                ul.submenu {
+                    li {
+                        width: 100%;
+                        padding-top: 24px;
+
+                        @include sp {
+                            padding-top: 16px;
+                        }
+
+                        a {
+                            color: var(--childrens_color5);
+
+                            @include lg {
+                                font-size: 1.6rem;
+                            }
+                        }
+
+                        a.instagram {
+                            span {
+                                padding-left: 8px;
+                            }
+
+                            svg {
+                                .cls-1 {
+                                    fill: var(--childrens_color5);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .othermenu {
+                padding: 16px 64px 32px 64px;
+                background: var(--childrens_color1);
+
+                @include lg {
+                    padding: 16px 24px 160px 24px;
+                }
+
+                ul {
+                    li {
+                        width: 100%;
+                        padding-top: 24px;
+
+                        a {
+                            color: var(--childrens_color5);
+                        }
+                    }
+                }
+            }
+
+            .back {
+                position: absolute;
+                right: -50px;
+                bottom: 48px;
+
+                @include lg {
+                    bottom: 160px;
+                }
+            }
+        }
+
+        &.clicked {
+            right: 0;
+            transition: 0.5s;
+        }
+    }
+}
+
+//下層ページ メインビジュアル
+.pagevisual {
+    max-width: 100%;
+    width: 100%;
+
+    &__inner {
+        @include content;
+        margin-top: 88px;
+        padding-top: 40px;
+        position: relative;
+
+        @include sm {
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        &--title {
+            max-width: 400px;
+            width: 100%;
+            height: 80px;
+            background-image: url(../image/SVG/backgrand/MV_title.svg);
+            @include absoluteCenterX;
+            @include flex(center, center);
+
+            @include sm {
+                max-width: 240px;
+                height: 48px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}

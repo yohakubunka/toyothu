@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1" height="8" viewBox="0 0 1 8"><defs><style>.a{fill:none;stroke:#26333b;}</style></defs><path class="a" d="M0,0V8" transform="translate(0.5)"/></svg>

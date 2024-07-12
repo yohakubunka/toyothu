@@ -1,0 +1,87 @@
+// ボタン、募集状況のテキスト
+%noto-24-b-b {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    color: $color3;
+    @include sm {
+        font-size: 2rem;
+    }
+}
+
+//ロゴ下のテキスト
+%yusei-50-r-b {
+    font-size: 5rem;
+    letter-spacing: 0;
+    line-height: 1.2;
+    color: $color3;
+    font-family: 'Yusei Magic', sans-serif;
+    text-shadow: 2px 2px 1px $color1, -2px 2px 1px $color1, 2px -2px 1px $color1, -2px -2px 1px $color1, 2px 0px 1px $color1, 0px 2px 1px $color1, -2px 0px 1px $color1, 0px -2px 1px $color1;
+    @include xl {
+        font-size: 4rem;
+    }
+    @include lg {
+        font-size: 3rem;
+    }
+    @include sm {
+        font-size: 3.2rem;
+    }
+}
+
+//キーワードの数字 
+%yusei-40-r-b {
+    font-size: 4rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-family: 'Yusei Magic', sans-serif;
+    font-weight: 400;
+    color: $color3;
+    @include sm {
+        font-size: 2.4rem;
+    }
+}
+
+//フッターの電話番号
+%noto-56-b-b {
+    font-size: 5.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    color: $color3;
+    font-family: 'Noto Sans JP', sans-serif;
+    @include xl {
+        letter-spacing: 0.08em;
+        font-size: 3.4rem;
+    }
+    @include sm {
+        letter-spacing: 0.08em;
+        font-size: 2.8rem;
+    }
+    @include media-max(374px) {
+        letter-spacing: 0.08em;
+        font-size: 2.4rem;
+    }
+}
+
+// コピーライトテキスト 
+%noto-12-m-w {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    color: $color1;
+    font-weight: 500;
+    @include sm {
+        font-size: 1rem;
+    }
+}
+
+// トップページへ戻る
+%noto-10-b-c {
+    font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    color: $color6;
+    font-weight: 600;
+    text-align: center;
+}

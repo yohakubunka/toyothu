@@ -1,0 +1,284 @@
+@charset "UTF-8";
+/* --------------------------------  MIX IN  -------------------------------- */
+/* --------------------------------  MIX IN  -------------------------------- */
+/* --------------------------------  Admin Menu  -------------------------------- */
+/*メニューの背景色*/
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+  background: #ffffff;
+}
+
+/*メニューのホバーした時の背景色*/
+#adminmenu a:hover,
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+  color: #b4b4b4;
+  background: #e6e6e6;
+}
+
+/* Admin Menu: submenu */
+/*メニューの第2階層の背景色*/
+#adminmenu .wp-submenu,
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
+  background: #4e4e4e;
+}
+
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+  border-right-color: #4e4e4e;
+}
+
+/*アクティブ時の背景色*/
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
+.folded #adminmenu li.current.menu-top {
+  color: #000000;
+  background: #ffffff;
+}
+
+/* Admin Menu: bubble */
+/*項目右の数字アイコンの色*/
+#adminmenu .awaiting-mod,
+#adminmenu .update-plugins {
+  color: #000000;
+  border: 1px solid #000000;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#adminmenu li.current a .awaiting-mod,
+#adminmenu li a.wp-has-current-submenu .update-plugins,
+#adminmenu li:hover a .awaiting-mod,
+#adminmenu li.menu-top:hover > a .update-plugins {
+  color: #000000;
+  border: 1px solid #000000;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* Admin Bar */
+/*管理画面のヘッダーの色*/
+#wpadminbar {
+  color: #fff;
+  background: #5b5b5b;
+}
+
+/* Core UI */
+/*更新、公開ボタンの色*/
+.wp-core-ui .button-primary {
+  background: #5b5b5b;
+  border-color: #5b5b5b;
+  color: #fff;
+}
+
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:focus {
+  background: #5b5b5b;
+  border-color: #5b5b5b;
+  color: #fff;
+}
+
+/* --------------------------------  Admin Menu  -------------------------------- */
+.text-10 {
+  font-size: 1rem;
+}
+
+.text-11 {
+  font-size: 1.1rem;
+}
+
+.text-12 {
+  font-size: 1.2rem;
+}
+
+.text-13 {
+  font-size: 1.3rem;
+}
+
+.text-14 {
+  font-size: 1.4rem;
+}
+
+.text-15 {
+  font-size: 1.5rem;
+}
+
+.text-16 {
+  font-size: 1.6rem;
+}
+
+.text-17 {
+  font-size: 1.7rem;
+}
+
+.text-18 {
+  font-size: 1.8rem;
+}
+
+.text-19 {
+  font-size: 1.9rem;
+}
+
+.text-20 {
+  font-size: 2rem;
+}
+
+.text-21 {
+  font-size: 2.1rem;
+}
+
+.text-22 {
+  font-size: 2.2rem;
+}
+
+.text-23 {
+  font-size: 2.3rem;
+}
+
+.text-24 {
+  font-size: 2.4rem;
+}
+
+.text-25 {
+  font-size: 2.5rem;
+}
+
+.text-26 {
+  font-size: 2.6rem;
+}
+
+.text-27 {
+  font-size: 2.7rem;
+}
+
+.text-28 {
+  font-size: 2.8rem;
+}
+
+.text-29 {
+  font-size: 2.9rem;
+}
+
+.text-30 {
+  font-size: 3rem;
+}
+
+.text-31 {
+  font-size: 3.1rem;
+}
+
+.text-32 {
+  font-size: 3.2rem;
+}
+
+.text-33 {
+  font-size: 3.3rem;
+}
+
+.text-34 {
+  font-size: 3.4rem;
+}
+
+.text-35 {
+  font-size: 3.5rem;
+}
+
+.text-36 {
+  font-size: 3.6rem;
+}
+
+.text-37 {
+  font-size: 3.7rem;
+}
+
+.text-38 {
+  font-size: 3.8rem;
+}
+
+.text-39 {
+  font-size: 3.9rem;
+}
+
+.text-40 {
+  font-size: 4rem;
+}
+
+.text-41 {
+  font-size: 4.1rem;
+}
+
+.text-42 {
+  font-size: 4.2rem;
+}
+
+.text-43 {
+  font-size: 4.3rem;
+}
+
+.text-44 {
+  font-size: 4.4rem;
+}
+
+.text-45 {
+  font-size: 4.5rem;
+}
+
+.text-46 {
+  font-size: 4.6rem;
+}
+
+.text-47 {
+  font-size: 4.7rem;
+}
+
+.text-48 {
+  font-size: 4.8rem;
+}
+
+.text-49 {
+  font-size: 4.9rem;
+}
+
+.text-50 {
+  font-size: 5rem;
+}
+
+.text-51 {
+  font-size: 5.1rem;
+}
+
+.text-52 {
+  font-size: 5.2rem;
+}
+
+.text-53 {
+  font-size: 5.3rem;
+}
+
+.text-54 {
+  font-size: 5.4rem;
+}
+
+.text-55 {
+  font-size: 5.5rem;
+}
+
+.text-56 {
+  font-size: 5.6rem;
+}
+
+.under-main-text {
+  color: #ffffff;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+/*
+* 案件担当者以外が記述する場合はなるべく此処に記述してください。
+* コーディング終了後修正記述用のscssファイルです。
+* このimportしたファイル以下に記述しないでください。
+*/
+/*# sourceMappingURL=common.css.map */

@@ -1,0 +1,179 @@
+html {
+    font-size: 10px!important;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    color: $color3;
+    @include lg {
+        font-size: 1.6rem;
+    }
+    @include sm {
+        font-size: 1.4rem;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.pc {
+    @include sm {
+        display: none;
+    }
+}
+
+.sp {
+    display: none;
+    @include sm {
+        display: inline-block;
+    }
+}
+
+//表示領域指定
+.page-width {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+// 背景設定
+.border-back {
+    background-color: $color6;
+    background-image: url(../images/pattern_stripe.png);
+}
+
+.cream-back {
+    background-color: $color6;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-family: 'Yusei Magic', sans-serif;
+    @include sm {
+        font-size: 3.2rem;
+    }
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-family: 'Yusei Magic', sans-serif;
+    font-weight: 400;
+    margin: 0 92px;
+    white-space: nowrap;
+    @include lg {
+        margin: 0 64px;
+    }
+    @include sm {
+        font-size: 2.4rem;
+        margin-bottom: 32px;
+        margin: 0 48px;
+    }
+    @include media-max(374px) {
+        margin: 0 16px;
+    }
+}
+
+// 見出し設定
+.single-line-head,
+.double-line-head {
+    @include flex($align: center, $justify: center);
+    margin-bottom: 48px;
+    @include sm {
+        margin-bottom: 32px;
+    }
+}
+
+h3 {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    @include sm {
+        font-size: 2rem;
+    }
+}
+
+h4 {
+    font-weight: 600;
+}
+
+.copy-text {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    @include sm {
+        font-size: 1rem;
+    }
+}
+
+section {
+    padding: 120px 0;
+    @include sm {
+        padding: 64px 0;
+    }
+}
+
+.black-border-button {
+    max-width: 312px;
+    width: 100%;
+    height: 64px;
+    border: solid 4px $color3;
+    border-radius: 100px;
+    @include flex($justify: center, $align: center);
+    position: relative;
+    @extend %noto-24-b-b;
+    transition: 0.3s;
+    margin: 0 auto;
+    @include sm {
+        max-width: 256px;
+    }
+    &:hover {
+        background-color: $color3;
+        color: $color1;
+        .cls-1 {
+            fill: $color1;
+        }
+    }
+    svg {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+    }
+}
+
+.cream-border-button {
+    max-width: 234px;
+    width: 100%;
+    height: 48px;
+    background-color: $color1;
+    color: $color3;
+    border: solid 4px $color6;
+    @include flex($align: center, $justify: center);
+    font-weight: 600;
+}
+
+.ac-child {}
+
+.ac-parent.open {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.sp-break {
+    @include xl {
+        display: block;
+    }
+}

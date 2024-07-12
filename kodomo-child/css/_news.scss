@@ -1,0 +1,233 @@
+#news,
+#category,
+#date {
+	.search {
+		@include flex(between, start);
+		padding-bottom: 48px;
+	}
+	.news-pagination{
+		padding-top: 48px;
+		.pagination{
+			@include flex(canter,canter);
+			.pager{
+				margin-right: 40px;
+				color: var(--childrens_color4);
+				@include sp{
+					margin-right: 16px;
+				}
+			}
+			.current{
+				color: var(--childrens_color1);
+			}
+			.next{
+				max-width: 14px;
+				width: 100%;
+				height: 24px;
+				&::after{
+					content: "";
+					max-width: 14px;
+					width: 100%;
+					height: 24px;
+					display: block;
+					background-image: url(../image/SVG/icon/news_next.svg);
+				}
+			}
+			.prev{
+				max-width: 14px;
+				width: 100%;
+				height: 24px;
+				margin-right: 40px;
+				@include sp{
+					margin-right: 16px;
+				}
+				&::after{
+					content: "";
+					max-width: 14px;
+					width: 100%;
+					height: 24px;
+					display: block;
+					background-image: url(../image/SVG/icon/news_prev.svg);
+				}
+			}
+		}
+	}
+}
+//カテゴリー/アーカイブ
+.categorymenu,
+.archivemenu {
+	max-width: 320px;
+	width: 100%;
+	@include lg {
+		margin: 0 auto;
+	}
+	h3 {
+		text-align: left;
+		padding: 0 24px;
+		margin-bottom: 16px;
+		line-height: 1em;
+		@include flex(between, center);
+		&::after {
+			content: "";
+			max-width: 24px;
+			width: 100%;
+			height: 14px;
+			transform: rotate(180deg);
+			transition: 0.5s;
+			background-image: url(../image/SVG/icon/news_menu.svg);
+			background-repeat: no-repeat;
+		}
+		&.on {
+			&::after {
+				transform: rotate(0deg);
+				transition: 0.5s;
+			}
+		}
+	}
+}
+.categorymenu {
+	margin: 0 0 0 auto;
+	@include lg {
+		margin: 0 auto;
+		padding-bottom: 16px;
+	}
+}
+.categorymenu__box,
+.archivemenu__box {
+	width: 100%;
+	@include flex(center, center, 0, 0, 1);
+	&::before {
+		content: "";
+		max-width: 320px;
+		width: 100%;
+		height: 4px;
+		background-image: url(../image/SVG/decoration/news_border.svg);
+		background-repeat: no-repeat;
+	}
+	ul.toggle {
+		width: 100%;
+		padding: 0 24px;
+		display: none;
+		li {
+			padding-top: 16px;
+			text-align: left;
+			width: 100%;
+			line-height: 1em;
+			a {
+				line-height: 1em;
+			}
+		}
+		li.active{
+			a {
+			color: var(--childrens_color5);
+			}
+		}
+	}
+}
+//お知らせ個別ページ
+#single {
+	.news-single {
+		.box {
+			@include flex(between, start);
+			@include lg {
+				@include flex(center, center);
+				flex-direction: column-reverse;
+			}
+			.maincontents {
+				max-width: 800px;
+				width: 100%;
+				margin-right: 48px;
+				@include lg {
+					margin: 0 auto;
+				}
+				.onebox {
+					&__inner {
+						.article {
+							&__top {
+								ul {
+									@include flex(start, center);
+									flex-direction: inherit;
+									li:last-child {
+										padding-left: 16px;
+									}
+								}
+								h3 {
+									padding-top: 16px;
+									@include flex(start, start, 0, 0, 1);
+									&::after {
+										content: "";
+										max-width: 100%;
+										width: 100%;
+										margin-top: 28px;
+										height: 4px;
+										background-image: url(../image/SVG/decoration/boder-line.svg);
+									}
+								}
+								.article__contents{
+									img{
+										width: 100%;
+										height: 100%;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.side {
+				max-width: 320px;
+				width: 100%;
+				&__archive {
+					padding-top: 48px;
+					@include lg {
+						padding: 16px 0 40px 0;
+					}
+				}
+			}
+		}
+	}
+	.operation {
+		max-width: 800px;
+		width: 100%;
+		margin-right: 48px;
+		@include flex(center, center);
+		@include xl {
+			max-width: 100%;
+		}
+		@include sm {
+			margin: 0;
+		}
+		@include sp{
+			@include flex(center, center,0,0,1);
+		}
+		&__button {
+			padding-top: 48px;
+			@include flex(center, center);
+			h3 {
+				font-weight: bold;
+				line-height: 1em;
+				margin: 0;
+				a {
+					@include flex(center, center);
+				}
+				.next-link {
+					img {
+						padding-left: 16px;
+					}
+				}
+				.prev-link {
+					img {
+						padding-right: 16px;
+					}
+				}
+			}
+			&:nth-child(2) {
+				margin: 0 80px;
+				@include sm {
+					margin: 0 32px;
+				}
+			}
+		}
+	}
+}
+
+

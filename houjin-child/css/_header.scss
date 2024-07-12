@@ -1,0 +1,303 @@
+.header {
+  position: relative;
+  .zaisyoku {
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    right: 112px;
+    @include sp {
+      right: inherit;
+      left: 16px;
+    }
+    a {
+      @include flex(center, center);
+      svg {
+        margin-right: 4px;
+        path {
+          fill: $color1;
+        }
+      }
+    }
+  }
+  .hamburger {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 21;
+    width: 56px;
+    height: 56px;
+    display: block;
+    background-color: $color1;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 16px 0 rgba(124, 93, 73, 0.2);
+    &.active {
+      background-color: inherit;
+    }
+  }
+  .hamburger {
+    span {
+      @include absoluteCenterX;
+      width: 30px;
+      display: block;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      transition: 0.5s all;
+      &:nth-child(1) {
+        top: 2px;
+        @include sm {
+          top: 5px;
+        }
+      }
+      &:nth-child(2) {
+        top: 10px;
+        @include sm {
+          top: 13px;
+        }
+      }
+      &:nth-child(3) {
+        top: 18px;
+        @include sm {
+          top: 21px;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 80%;
+      left: 77%;
+      width: 56px;
+      height: 56px;
+      margin: -45px 0 0 -43px;
+      display: block;
+      border-radius: 50%;
+      transition: all 0.75s;
+    }
+    &.active {
+      &::after {
+        background-color: $color2;
+        @include sp {
+          top: 81%;
+        }
+      }
+    }
+  }
+  .hamburger.active span:nth-child(1) {
+    top: 11px;
+    left: 10px;
+    z-index: 10;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    @include sm {
+      top: 14px;
+      left: 11px;
+    }
+    svg {
+      path {
+        fill: $color1 !important;
+      }
+    }
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  @-webkit-keyframes active-hamburger-bar02 {
+    100% {
+      height: 0;
+    }
+  }
+  @keyframes active-hamburger-bar02 {
+    100% {
+      height: 0;
+    }
+  }
+  .hamburger.active span:nth-child(3) {
+    top: 11px;
+    left: 17px;
+    z-index: 10;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    @include sm {
+      top: 14px;
+      left: 17px;
+    }
+    svg {
+      path {
+        fill: $color1 !important;
+      }
+    }
+  }
+}
+.globalMenuSp {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: 480px;
+  color: $color1;
+  transform: translateX(100%);
+  transition: all 0.6s;
+  text-align: center;
+  .nav-logo {
+    position: absolute;
+    top: 473px;
+    right: -32px;
+    width: 100%;
+    max-width: 276px;
+    height: 240px;
+    background-image: url(../images/wood.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    @include lg {
+      top: 450px;
+    }
+    @include sp {
+      top: 300px;
+      right: -60px;
+    }
+  }
+  ul {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .overflow {
+    @media screen and(max-height:710px) {
+      overflow-y: scroll;
+      height: 100vh;
+    }
+  }
+  .bg-brown {
+    padding: 96px 62px 8px 62px;
+    background-color: $color4;
+    @include sp {
+      padding: 88px 0 8px 48px;
+    }
+    @media screen and(max-width:374px) {
+      padding: 88px 16px 8px 16px;
+    }
+  }
+  .bg-black {
+    height: 100vh;
+    padding: 32px 62px 104px 62px;
+    background-color: $color2;
+    @include sp {
+      padding: 32px 0 0 44px;
+    }
+    @media screen and(max-width:374px) {
+      padding: 32px 16px 8px 16px;
+    }
+  }
+  .nav-flex {
+    @include flex(between, start);
+    @include sp {
+      display: block;
+    }
+    .head-link {
+      padding-left: 0;
+      width: 100%;
+      max-width: 166px;
+      @include sp {
+        max-width: 288px;
+      }
+      .facility-button,
+      .contact-button {
+        position: relative;
+        @include flex(center, center);
+        flex-direction: column;
+        margin-bottom: 32px;
+        padding: 0;
+        width: 100%;
+        height: 90px;
+        color: $color1;
+        font-weight: bold;
+        border-radius: 20px;
+        background-image: url(../images/dotted.png);
+        background-repeat: no-repeat;
+        @include sp {
+          flex-direction: inherit;
+          max-width: 288px;
+          height: 64px;
+          background-image: url(../images/dotted_sp.png);
+        }
+        .n-txt_b {
+          @include sp {
+            font-size: 1.6rem;
+          }
+        }
+        svg {
+          @include sp {
+            margin-right: 8px;
+          }
+          path {
+            fill: $color1;
+          }
+        }
+        .n-txt_b {
+          padding-top: 8px;
+          @include sp {
+            padding-top: 0;
+          }
+        }
+      }
+    }
+  }
+  .head-link {
+    position: relative;
+    display: block;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    text-align: left;
+    text-decoration: none;
+    &.n-txt_b {
+      @include sp {
+        font-size: 1.6rem;
+      }
+    }
+    .left-line {
+      &:before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 0;
+        width: 8px;
+        height: 4px;
+        border-bottom: solid 4px $color1;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+nav.globalMenuSp.active {
+  transform: translateX(0%);
+}
+
+//退職者ページ
+.body_retired{
+  .hamburger{
+    span{
+      svg{
+        path{
+          stroke: inherit;
+        }
+      }
+    }
+  }
+  .globalMenuSp {
+    .nav-flex{
+      .head-link{
+        a{
+          svg{
+            path{
+              stroke: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

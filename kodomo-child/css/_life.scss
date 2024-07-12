@@ -1,0 +1,264 @@
+#life {
+	//一日の流れ
+	.oneday {
+		.box {
+			.tabbox {
+				max-width: 100%;
+				width: 100%;
+				@include flex(end, center);
+				padding-right: 40px;
+				@include sm {
+					max-width: calc(100% - 80px);
+					margin: 0 auto;
+					padding-right: 0;
+					@include flex(between, center);
+				}
+				@include sp {
+					@include flex(cente, center, 0, 0, 1);
+				}
+				.tab {
+					max-width: 260px;
+					width: 100%;
+					height: 64px;
+					background-color: var(--childrens_color7);
+					transition: 0.5s;
+					border-radius: 40px 40px 0px 0px;
+					cursor: pointer;
+					@include lg {
+						max-width: 240px;
+					}
+					@include sm {
+						max-width: calc(50% - 8px);
+					}
+					@include sp {
+						border-radius: 40px;
+						max-width: 100%;
+						margin-bottom: 16px;
+					}
+					&.active {
+						background-color: var(--childrens_color5);
+						transition: 0.5s;
+					}
+					&:first-child {
+						margin-right: 16px;
+						@include lg {
+							margin-right: 24px;
+						}
+						@include sm {
+							margin-right: 0;
+						}
+					}
+					&-btn {
+						width: 100%;
+						height: 100%;
+						@include flex(center, center);
+						h3 {
+							margin-bottom: 0;
+							line-height: 1em;
+						}
+					}
+				}
+			}
+			.tabinner {
+				max-width: 100%;
+				width: 100%;
+				position: relative;
+				&-box {
+					max-width: 100%;
+					width: 100%;
+					padding: 40px;
+					border-radius: 40px;
+					background-color: var(--childrens_color5);
+					opacity: 0;
+					transition: 0.5s;
+					&:last-child {
+						position: absolute;
+						top: 0;
+					}
+					&.active {
+						opacity: 1;
+						transition: 0.5s;
+					}
+					.flex {
+						@include lg {
+							@include flex(between, start);
+							flex-direction: inherit;
+						}
+						@include sm {
+							@include flex(center, center, 0, 0, 1);
+							flex-direction: column-reverse;
+						}
+						&-left {
+							@include lg {
+								max-width: calc(50% - 16px);
+							}
+							@include sm {
+								max-width: 100%;
+							}
+							ul {
+								@include flex(start, 0, 0, 0, 1);
+								li {
+									line-height: 1.2em;
+									margin-bottom: 32px;
+									@include flex(start, start, 0, 0, 1);
+									@include lg {
+										margin-bottom: 24px;
+									}
+									&::after {
+										content: "";
+										max-width: 100%;
+										width: 100%;
+										height: 2px;
+										margin-top: 8px;
+										background-image: url(../image/SVG/decoration/facility_line.svg);
+										background-size: contain;
+									}
+									&:last-child {
+										margin-bottom: 0px;
+									}
+								}
+							}
+						}
+						&-right {
+							@include lg {
+								max-width: calc(50% - 16px);
+								@include flex(start, center);
+							}
+							@include sm {
+								max-width: 100%;
+								padding-bottom: 24px;
+							}
+							img {
+								@include lg {
+									max-width: 345px;
+									margin: 0 auto;
+									padding: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//2022.07.01 追記
+	.recruit-day-flow{
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
+		&__content{
+			max-width: 100%;
+			width: 100%;
+			@include flex(start,between);
+			margin-bottom: 24px;
+			&--time{
+				max-width: 72px;
+				width: 100%;
+				position: relative;
+				padding: 0;
+				@include xs{
+					max-width: 64px;
+				}
+				h3{
+					padding-bottom: 16px;
+					text-align: center;
+					background: var(--childrens_color8);
+					margin: 0;
+					letter-spacing: 0.06em;
+				}
+				&::after{
+					content: "";
+					width: 4px;
+					height: 200px;
+					background-color: var(--childrens_color1);
+					border-radius: 10px;
+					@include absoluteCenterX;
+					top: auto;
+					bottom: 0;
+					z-index: -1;
+					@include sm{
+						height: 100%;
+					}
+				}
+			}
+			.flow-text{
+				max-width: 100%;
+				width: 100%;
+				padding-left: 32px;
+				@include flex(start,between);
+				@include sm{
+					@include flex(start,between,0,0,1);
+				}
+				@include sp{
+					padding-left: 16px;
+				}
+				&__text{
+					max-width: 100%;
+					width: 100%;
+					padding-right: 32px;
+					@include sm{
+						padding: 0;
+					}
+					h3.item-title{
+						margin-bottom: 16px;
+					}
+				}
+				&__image{
+					max-width: 376px;
+					width: 100%;
+					flex-shrink: 0;
+					@include sm{
+						margin-top: 16px;
+						max-width: 100%;
+					}
+					img{
+						width: 100%;
+					}
+				}
+			}
+			&:last-of-type{
+				margin-bottom: 0;
+				.recruit-day-flow__content--time{
+					&::after{
+						display: none;
+					}
+				}
+			}
+		}
+		p.model{
+			margin-top: 24px;
+			text-align: right;
+		}
+	}
+
+	//年間行事
+	.event {
+		.oddflex {
+			&__box {
+				height: 285px;
+				padding-top: 40px;
+				@include flex(start, start);
+				@include sp{
+					max-width: 378px;
+				}
+				h3 {
+					margin-bottom: 0;
+				}
+				p {
+					line-height: 1em;
+					padding-top: 8px;
+				}
+
+			}
+		}
+		p.rigth-text {
+			padding-top: 16px;
+			@include xl {
+				max-width: 800px;
+				width: 100%;
+				margin: 0 auto;
+			}
+		}
+	}
+}

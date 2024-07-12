@@ -1,0 +1,257 @@
+footer {
+	max-width: 100%;
+	width: 100%;
+	background-color: var(--childrens_color5);
+	.footer {
+		max-width: 100%;
+		width: 100%;
+		background-color: var(--childrens_color3);
+		background-image: url(../image/SVG/backgrand/footer_back.svg);
+		background-position: 10px 10px;
+		@include flex(center, center, 0, 0, 1);
+		&__menu {
+			max-width: 100%;
+			width: 100%;
+			background-color: var(--childrens_color4);
+			@include xl {
+				display: none;
+			}
+			ul {
+				max-width: 872px;
+				width: 100%;
+				height: 64px;
+				@include flex(between, center);
+				margin: 0 auto;
+				li {
+					a {
+						color: var(--childrens_color5);
+					}
+				}
+			}
+		}
+		&__inner {
+			@include content;
+			padding-top: 25px;
+			@include sm {
+				max-width: 100%;
+			}
+			&--return {
+				display: block;
+				max-width: max-content;
+				position: relative;
+				margin: 0 0 -1px auto;
+				p {
+					font-size: 1.2rem;
+					line-height: 1em;
+					@include absoluteCenter;
+					top: auto;
+					bottom: 8px;
+					color: var(--childrens_color5);
+				}
+			}
+			&--box {
+				width: 100%;
+				background-color: var(--childrens_color4);
+				padding: 16px;
+				@include sp {
+					padding: 8px;
+				}
+				.flex {
+					background-color: var(--childrens_color5);
+					padding: 40px;
+					@include xl{
+						@include flex(between, center);
+						flex-direction: inherit;
+					}
+					@include sm {
+						padding: 32px;
+						@include flex(center, center, 0, 0, 1);
+					}
+					&-left {
+						max-width: calc(50% - 16px);
+						@include flex(start, center, 0, 0, 1);
+						@include sm {
+							max-width: 100%;
+						}
+						.footerlogo {
+							max-width: 100%;
+							width: 100%;
+							img {
+								@include lg {
+									padding: 0;
+								}
+							}
+						}
+						.footertext {
+							max-width: 100%;
+							width: 100%;
+							padding: 24px 0 16px 0;
+							@include flex(start, start, 0, 0, 1);
+							@include sm {
+								padding: 24px 0 0 0;
+								@include flex(center, center, 0, 0, 1);
+							}
+							p {
+								@include sm {
+									text-align: center;
+									@include flex(center, center,0,0,1);
+								}
+								span {
+									padding-right: 8px;
+									@include lg {
+										width: 100%;
+										display: block;
+									}
+								}
+							}
+							&__tel {
+								padding: 16px 0 8px 0;
+								@include flex(start, center);
+								span {
+									max-width: 54px;
+									width: 100%;
+									flex-shrink: 0;
+									@include lg {
+										max-width: 32px;
+									}
+									@include sm{
+										max-width: 27px;
+									}
+									img {
+										width: 100%;
+										padding: 0;
+									}
+								}
+								p {
+									@extend .noto-bold;
+									line-height: 1em;
+									font-size: 5.6rem;
+									padding-left: 16px;
+									@include xl {
+										font-size: 3.2rem;
+									}
+									@include sp {
+										padding-left: 8px;
+										font-size: 2.2rem;
+									}
+								}
+							}
+							&__time {
+								@include flex(start, center);
+								@include lg {
+									@include flex(start, start, 0, 0, 1);
+								}
+								p {
+									padding-right: 8px;
+									@include sm{
+										padding: 0;
+										text-align: center;
+										width: 100%;
+									}
+								}
+								&--box {
+									@include flex(start, center);
+									@include sm{
+										@include flex(start, start, 0, 0, 1);
+									}
+									p {
+										padding: 0 8px 0 0;
+										@include sm{
+											padding: 0;
+											width: 100%;
+										}
+										&:last-child {
+											padding: 0 0 0 8px;
+											@include sp {
+												padding: 0;
+											}
+										}
+									}
+								}
+							}
+						}
+						.footerbutton {
+							max-width: 100%;
+							width: 100%;
+							.button {
+								margin-top: 16px;
+								margin-left: 0;
+								@include flex(start, start, 0, 0, 1);
+								a {
+									margin-right: auto;
+									@include sm {
+										margin: 0 auto;
+									}
+								}
+							}
+						}
+					}
+					&-right {
+						max-width: calc(50% - 16px);
+						@include sm {
+							max-width: 100%;
+						}
+						@include sp{
+							@include flex(center,center);
+						}
+						iframe {
+							max-width: 100%;
+							width: 100%;
+							height: 457px;
+							border-radius: 40px;
+							@include sm {
+								margin-top: 32px;
+							}
+							@include sp{
+								margin-top: 16px;
+								max-width: 256px;
+								height: 230px;
+								border-radius: 20px;
+							}
+						}
+					}
+				}
+			}
+			&--banner {
+				padding-top: 32px;
+				max-width: 100%;
+				width: 100%;
+				margin: 0 auto;
+				@include sm{
+					padding-top: 0;
+				}
+				ul {
+					@include flex(center, center);
+					@include sm {
+						@include flex(center, center, 0, 0, 1);
+					}
+					li {
+						max-width: 234px;
+						width: 100%;
+						height: 48px;
+						margin: 0 8px;
+						@include sm {
+							max-width: 100%;
+							margin: 16px 0 0 0;
+						}
+						a {
+							width: 100%;
+							height: 100%;
+							background-color: var(--childrens_color5);
+							border: solid 4px;
+							border-color: var(--childrens_color4);
+							@include flex(center, center);
+							line-height: 1em;
+							color: var(--childrens_color4);
+						}
+					}
+				}
+			}
+		}
+		.copyright {
+			text-align: center;
+			font-size: 1.2rem;
+			padding: 24px 0 20px 0;
+		}
+	}
+}

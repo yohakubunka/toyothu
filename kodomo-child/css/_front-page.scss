@@ -1,0 +1,250 @@
+#front {
+	//ようこそ〇〇園へ
+	.message {
+		.rigth-text {
+			padding-top: 16px;
+		}
+	}
+	.support {
+		.flex {
+			@include lg {
+				flex-direction: column-reverse;
+			}
+			.flex-left{
+				p{
+					word-break: break-all;
+				}
+			}
+		}
+	}
+	.custody{
+		.flex{
+			.flex-right{
+				p{
+					word-break: break-all;
+				}
+			}
+		}
+	}
+	//気になる情報をチェック
+	section.back.last {
+		background-image: url(../image/SVG/backgrand/check_back.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 1516px;
+		@include xl {
+			background-image: url(../image/SVG/backgrand/check_back_tab.svg);
+			background-position: center 240px;
+			background-size: auto;
+			@include flex(center, center, 0, 0, 1);
+		}
+		@include sp {
+			background-image: url(../image/SVG/backgrand/check_back_sp.svg);
+			background-position: center 15px;
+			background-size: cover;
+		}
+		.twoflex {
+			@include xl {
+				@include flex(center, center, 0, 0, 1);
+			}
+			.check-box {
+				max-width: 560px;
+				width: 100%;
+				margin-bottom: 48px;
+				position: relative;
+				@include xl {
+					margin: 0 0 40px 0;
+				}
+				@include sp {
+					max-width: 288px;
+					margin: 0 0 16px 0;
+				}
+				.check-inner {
+					max-width: 520px;
+					width: 100%;
+					height: 520px;
+					border-radius: 100%;
+					background: var(--childrens_color8);
+					@include flex(center, center, 0, 0, 1);
+					position: relative;
+					transition: 0.5s;
+					@include xl {
+						margin: 0 0 40px 0;
+					}
+					@include sp {
+						max-width: 288px;
+						height: 288px;
+						margin: 0 0 24px 0;
+					}
+					//フォバーアニメーション
+					&.hover {
+						transition: 0.5s;
+						background: var(--childrens_color4);
+						.check-img {
+							svg {
+								path {
+									fill: var(--childrens_color5);
+								}
+							}
+						}
+						h3,
+						p {
+							color: var(--childrens_color5);
+						}
+					}
+					.check-img {
+						margin-bottom: 24px;
+						@include sp {
+							max-width: 80px;
+							width: 100%;
+							height: 56px;
+							margin-bottom: 16px;
+						}
+						svg{
+							@include sp {
+								max-width: 100%;
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+					h3 {
+						@include sp {
+							margin-bottom: 8px;
+						}
+					}
+					p {
+						max-width: 320px;
+						width: 100%;
+						@include sp {
+							max-width: 160px;
+							font-size: 1.4rem;
+						}
+					}
+					a {
+						@include flex(center, center, 0, 0, 1);
+						p {
+							@include flex(center, center, 0, 0, 1);
+							text-align: center;
+							max-width: 320px;
+							width: 100%;
+						}
+					}
+					&::after {
+						content: "";
+						width: 32px;
+						height: 32px;
+						border-radius: 24px;
+						background: var(--childrens_color1);
+						position: absolute;
+						top: 40px;
+						left: calc(50% - 16px);
+						@include sp {
+							width: 16px;
+							height: 16px;
+							top: 16px;
+							left: calc(50% - 8px);
+						}
+					}
+					&::before {
+						content: "";
+						width: 4px;
+						height: 136px;
+						background-image: url(../image/SVG/decoration/dottedline.svg);
+						background-repeat: no-repeat;
+						position: absolute;
+						top: -92px;
+						z-index: 1;
+						left: calc(50% - 2px);
+						@include sp {
+							width: 2;
+							height: 64px;
+							top: -40px;
+							background-image: url(../image/SVG/decoration/dottedline_sp.svg);
+							left: calc(50% - 1px);
+						}
+					}
+					p {
+						text-align: center;
+						z-index: 1;
+					}
+				}
+				&:first-child,
+				&:nth-child(2) {
+					z-index: 2;
+				}
+				&:first-child {
+					@include xl {
+						margin-top: 88px;
+					}
+					@include sp {
+						margin-top: 40px;
+					}
+				}
+				&:nth-child(2n) {
+					margin-left: 24px;
+					@include xl {
+						margin-left: 0;
+					}
+				}
+				&:nth-child(2n + 1) {
+					margin-right: 24px;
+					margin-bottom: 0;
+					@include xl {
+						margin-bottom: 40px;
+						margin-right: 0;
+					}
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+				.seemore {
+					max-width: 200px;
+					width: 100%;
+					height: 200px;
+					border-radius: 100%;
+					background: var(--childrens_color8);
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					transition: 0.5s;
+					@include sp {
+						max-width: 96px;
+						height: 96px;
+					}
+					//フォバーアニメーション
+					&.hover {
+						transition: 0.5s;
+						background: var(--childrens_color4);
+						a {
+							p {
+								color: var(--childrens_color5);
+							}
+						}
+					}
+					a {
+						width: 100%;
+						height: 100%;
+						@include flex(center, center, 0, 0, 1);
+						p {
+							@include sp {
+								display: none;
+							}
+						}
+						span {
+							padding-top: 8px;
+							max-height: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.instagram {
+		.button {
+			@include lg {
+				margin-top: 130px;
+			}
+		}
+	}
+}

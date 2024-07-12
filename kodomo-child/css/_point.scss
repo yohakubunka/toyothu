@@ -1,0 +1,139 @@
+#point {
+	//保育・教育の特徴
+	.feature{
+		.box{
+			.linebox{
+				&:nth-child(odd){
+					.linebox__title p{
+						margin: 0 0 0 auto;
+						padding-left: 16px;
+						padding-right: 0;
+					}
+				}
+				&__inner{
+					&--text{
+						padding-left: 40px;
+						@include lg{
+							padding: 0;
+						}
+					}
+					&--pot{
+						position: relative;
+						@include sm{
+							padding-top: 24px;
+						}
+						img{
+							&:first-child{
+								max-width: calc(100% - (35% + 24px));
+								width: 100%;
+								@include lg{
+									max-width: calc(100% - (35% + 16px));
+								}
+							}
+							&:nth-child(2){
+								max-width: 35%;
+								width: 100%;
+							}
+							&:nth-child(3){
+								max-width: 35%;
+								width: 100%;
+								position: absolute;
+								bottom: 0;
+								right: 0;
+							}
+						}
+					}
+				}
+				&:nth-child(2){
+					.linebox__inner{
+						.linebox__inner--text{
+							padding: 0 40px 0 0;
+							@include lg{
+								padding: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//特別な保育
+	.education {
+		.twoflex {
+			.center-text {
+				h3 {
+					margin-bottom: 8px;
+				}
+				p {
+					line-height: 1em;
+					padding: 16px;
+				}
+			}
+		}
+	}
+	//食育
+	.food {
+		.foodlist {
+			padding-top: 16px;
+			@include flex(between, 0);
+			align-items: inherit;
+			flex-direction: inherit;
+			@include md {
+				@include flex(center, center);
+				flex-direction: column-reverse;
+			}
+			.flex-right {
+				max-width: calc(50% - 16px);
+				width: 100%;
+				@include md {
+					max-width: 345px;
+					padding-bottom: 24px;
+				}
+				img {
+					height: 416px;
+					object-fit: cover;
+					border-radius: 40px;
+					padding: 0;
+					@include md {
+						width: 100%;
+						border-radius: inherit;
+						object-fit: inherit;
+						height: auto;
+					}
+				}
+			}
+			.flex-left {
+				max-width: calc(50% - 16px);
+				width: 100%;
+				@include md {
+					max-width: 100%;
+				}
+				ul {
+					li {
+						max-width: 100%;
+						width: 100%;
+						height: 56px;
+						border-radius: 100px;
+						background-color: var(--childrens_color5);
+						margin-bottom: 16px;
+						padding-left: 40px;
+						@include flex(start, center);
+						&:last-child {
+							margin-bottom: 0;
+						}
+						@include sp {
+							height: auto;
+							padding: 8px 16px;
+						}
+						span {
+							padding-right: 24px;
+							@include sp {
+								padding-right: 8px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+.noto {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.noto-bold {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.yusei {
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html body {
+  background-color: var(--preschool_color6);
+}
+
+.animation,
+#life .recruit-day-flow__content--time h3,
+.linebox__title p {
+  background-color: var(--preschool_color6);
+}
+
+header .hamburger__inner ol {
+  background: var(--preschool_color3);
+}
+header .insidemenu {
+  background-color: var(--preschool_color3);
+}
+
+#front section.back.last .twoflex .check-box .seemore,
+#front section.back.last .twoflex .check-box .check-inner {
+  background-color: var(--preschool_color6);
+}
+#front section.back.last .twoflex .check-box .seemore.hover,
+#front section.back.last .twoflex .check-box .check-inner.hover {
+  background: var(--preschool_color3);
+}
+
+svg .baby_color {
+  fill: var(--preschool_color6);
+}
+
+footer .footer__menu {
+  background-color: var(--preschool_color3);
+}
+footer .footer__inner--box {
+  background-color: var(--preschool_color3);
+}
+footer .footer__inner--banner ul li a {
+  color: var(--preschool_color3);
+  border-color: var(--preschool_color3);
+}
+
+@media screen and (max-width: 767px) {
+  .followmenu {
+    background: var(--preschool_color3);
+  }
+}
+
+.oddflex__box::before {
+  background-image: url(../image/SVG/backgrand/box-top02.svg);
+  top: 0;
+}
+.oddflex__box::after {
+  background-image: url(../image/SVG/backgrand/box-bottom02.svg);
+  top: auto;
+  bottom: 0;
+}
+
+footer {
+  background-color: var(--preschool_color6);
+}
+
+footer .footer {
+  background-color: var(--preschool_color2);
+}
+/*# sourceMappingURL=common-hoiku.css.map */

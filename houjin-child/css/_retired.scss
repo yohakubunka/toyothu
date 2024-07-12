@@ -1,0 +1,46 @@
+#retired {
+    dl {
+        dt {
+            p {
+                font-size: 1.4rem;
+                line-height: 1.2em;
+            }
+        }
+    }
+    .file-wrap {
+        display: flex;
+        align-items: center;
+        .clear {
+            margin-left: 8px;
+            background-color: #D5D5D5;
+            padding: 0 40px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tenpu-num {
+            cursor: pointer;
+        }
+    }
+}
+
+.name-pin,
+.maidenname-pin,
+.jusyo-pin,
+.period-pin,
+.documentfirst-pin,
+.documentsecond-pin {
+    display: none;
+}
+
+//後で消す
+// .houjin-form__basic {
+//   padding-bottom: 64px;
+// }
+// .document-set {
+//   margin-bottom: 64px;
+//   background-color: #fff;
+//   .document-set__career {
+//     padding-bottom: 40px;
+//     background-color: #e6c0c0;
+//   }
+// }

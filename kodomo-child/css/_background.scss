@@ -1,0 +1,421 @@
+//タイトル装飾
+h2.icon {
+	@include flex(center, center, 0, 0, 1);
+}
+.glitter {
+	&::after,
+	&::before {
+		content: "";
+		max-width: 190px;
+		width: 100%;
+		height: 112px;
+		@include sm {
+			display: none;
+		}
+	}
+	&::after {
+		margin-left: 95px;
+		background-image: url(../image/SVG/decoration/title01_left.svg);
+		background-repeat: no-repeat;
+		@include lg {
+			margin: 0;
+		}
+	}
+	&::before {
+		content: "";
+		margin-right: 95px;
+		background-image: url(../image/SVG/decoration/title01_right.svg);
+		background-repeat: no-repeat;
+		@include lg {
+			margin: 0;
+		}
+	}
+}
+.shooting {
+	@include flex(center, center, 0, 0, 1);
+	&::before {
+		content: "";
+		max-width: 287px;
+		width: 100%;
+		height: 24px;
+		background-image: url(../image/SVG/decoration/titleborder_top.svg);
+		background-repeat: no-repeat;
+	}
+	&::after {
+		content: "";
+		max-width: 448px;
+		height: 18px;
+		width: 100%;
+		background-image: url(../image/SVG/decoration/titleborder_bottom.svg);
+		background-repeat: no-repeat;
+	}
+}
+.wood {
+	&::after,
+	&::before {
+		content: "";
+		max-width: 142px;
+		width: 100%;
+		height: 112px;
+		@include sm {
+			display: none;
+		}
+	}
+	&::before {
+		margin-right: 100px;
+		background-image: url(../image/SVG/decoration/title02_left.svg);
+		background-repeat: no-repeat;
+		@include lg {
+			margin: 0;
+		}
+	}
+	&::after {
+		margin-left: 100px;
+		background-image: url(../image/SVG/decoration/title02_right.svg);
+		background-repeat: no-repeat;
+		@include lg {
+			margin: 0;
+		}
+	}
+}
+.glitter,
+.wood {
+	@include flex(center, center);
+	@include lg {
+		@include flex(between, center);
+	}
+	@include sm {
+		@include flex(center, center);
+	}
+}
+.content{
+	.linebox{
+		&__inner{
+			&--text{
+				background-image: url(../image/SVG/backgrand/pic_odd-back.svg);
+				background-repeat: no-repeat;
+				background-position: bottom right;
+				@include lg{
+					background-size: 80px;
+				}
+				p{
+					max-width: calc(100% - 208px);
+					@include lg{
+						max-width: 100%;
+						padding-bottom: 80px;
+					}
+				}
+			}
+		}
+		&:last-child{
+			.linebox__inner{
+				.linebox__inner--text{
+					background-image: url(../image/SVG/backgrand/pic_even-back.svg);
+				}
+			}
+		}
+	}
+}
+//ようこそ〇園へ・保育理念
+.center-back {
+	@include flex(center, start);
+	&::after {
+		content: "";
+		width: 260px;
+		height: 278px;
+		margin-top: 56px;
+		background-image: url(../image/SVG/decoration/center_right.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		@include sm {
+			display: none;
+		}
+	}
+	&::before {
+		content: "";
+		width: 270px;
+		height: 295px;
+		margin-top: 56px;
+		background-image: url(../image/SVG/decoration/center_left.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		@include sm {
+			display: none;
+		}
+	}
+}
+//保育内容
+
+//スマホ用セクション
+section:nth-child(odd) {
+	@include sm {
+		position: relative;
+		margin: 72px 0;
+		&::after,
+		&::before {
+			content: "";
+			display: block;
+			background-repeat: no-repeat;
+			background-position: center;
+			position: absolute;
+		}
+		&::before {
+			width: 72px;
+			height: 72px;
+			background-image: url(../image/SVG/decoration/section_right_sp.svg);
+			right: 16px;
+			top: -72px;
+		}
+	}
+}
+section:nth-child(even) {
+	@include sm {
+		position: relative;
+		margin: 72px 0;
+		&::after,
+		&::before {
+			content: "";
+			display: block;
+			background-repeat: no-repeat;
+			background-position: center;
+			position: absolute;
+		}
+		&::after {
+			width: 72px;
+			height: 72px;
+			background-image: url(../image/SVG/decoration/section_left_sp.svg.svg);
+			left: 16px;
+			top: -72px;
+		}
+	}
+}
+footer{
+	@include sm {
+		position: relative;
+		margin-top: 96px;
+		&::after,
+		&::before {
+			content: "";
+			display: block;
+			background-repeat: no-repeat;
+			background-position: center;
+			position: absolute;
+		}
+		&::before {
+			width: 72px;
+			height: 72px;
+			background-image: url(../image/SVG/decoration/section_right_sp.svg);
+			right: 16px;
+			top: -96px;
+		}
+	}
+}
+section.check {
+	@include sm {
+		margin: 96px 0;
+		padding: 64px 0;
+		&::before {
+			top: -96px;
+		}
+		&::after {
+			bottom: -96px;
+		}
+	}
+}
+//保育のこだわり
+main#life,
+main#point {
+	//保育・教育の特徴
+	.oneflex {
+		&__box {
+			&--inner {
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					background-repeat: no-repeat;
+				}
+			}
+			&:nth-child(odd) {
+				.oneflex__box--inner {
+					&::after {
+						width: 110px;
+						height: 110px;
+						right: 0;
+						background-image: url(../image/SVG/backgrand/pic_odd-back.svg);
+					}
+				}
+			}
+			&:nth-child(even) {
+				.oneflex__box--inner {
+					&::after {
+						width: 176px;
+						height: 100px;
+						left: 0;
+						background-image: url(../image/SVG/backgrand/pic_even-back.svg);
+					}
+				}
+			}
+		}
+	}
+}
+//記事の背景
+.newslist,
+.news {
+	article {
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 40px;
+			right: 40px;
+			width: 40px;
+			height: 40px;
+			background-image: url(../image/SVG/icon/article_icon.svg);
+			background-repeat: no-repeat;
+			@include lg{
+				bottom: 24px;
+				right: 24px;
+			}
+			@include sp {
+				width: 28px;
+				height: 28px;
+			}
+		}
+	}
+}
+//背景アニメーション
+.top-custody {
+	background-image: url(../image/SVG/backgrand/top_news-custody.svg);
+	background-position: top;
+}
+.top-support {
+	background-image: url(../image/SVG/backgrand/top_support-back.svg);
+	background-position: top;
+}
+.about-facility{
+	background-image: url(../image/SVG/backgrand/back_right-01.svg);
+	background-position: top 56px left calc(50% - 680px);
+	position: relative;
+	.baby_second{
+		position: absolute;
+		bottom: 0;
+		right: 8%;
+		z-index: -1;
+		@include xl{
+			display: none;
+		}
+	}
+}
+.news-back{
+	background-image: url(../image/SVG/backgrand/back_left-01.svg),
+	url(../image/SVG/backgrand/back_right-01.svg);
+	background-position: bottom left calc(50% - 680px),
+	top 56px right calc(50% - 680px);
+}
+.news_single {
+	background-image: url(../image/SVG/backgrand/back_right-01.svg);
+	background-position: top 56px left calc(50% - 680px);
+	position: relative;
+	.baby_second{
+		position: absolute;
+		bottom: 0;
+		right: 8%;
+		@include pc{
+			display: none;
+		}
+	}
+}
+.life_target{
+	background-image: url(../image/SVG/backgrand/top_support-back.svg);
+	background-position: center;
+}
+.about-support{
+	background-image: url(../image/SVG/backgrand/top_support-back.svg);
+	background-position: top;
+}
+.point_education{
+	background-image: url(../image/SVG/backgrand/activity_right.svg),
+	url(../image/SVG/backgrand/back_left-01.svg);
+	background-position: top left calc(50% - 680px),
+		bottom right calc(50% - 680px);
+}
+.point_food {
+	background-image: url(../image/SVG/backgrand/food_right.svg),
+		url(../image/SVG/backgrand/food_left.svg);
+	background-position: top 50% left calc(50% - 680px),
+		bottom 50% right calc(50% - 680px);
+}
+.guide_field,
+.guide_price {
+	background-image: url(../image/SVG/backgrand/back_left-01.svg);
+	background-position: bottom left calc(50% - 680px);
+	position: relative;
+	.baby_third{
+		position: absolute;
+		bottom: 0;
+		right: 8%;
+		z-index: -1;
+		@include xl{
+			display: none;
+		}
+	}
+}
+.guide_flow {
+	background-image: url(../image/SVG/backgrand/back_right-01.svg),
+		url(../image/SVG/backgrand/guide_flow-back.svg);
+	background-position: top 0 left calc(50% - 480px),
+		bottom right calc(50% - 488px);
+}
+.download_odd {
+	background-image: url(../image/SVG/backgrand/download_back-left.svg),
+		url(../image/SVG/backgrand/back_left-01.svg);
+	background-position: top 0 left calc(50% - 454px),
+		bottom right calc(50% - 460px);
+}
+.download_even {
+	background-image: url(../image/SVG/backgrand/download_back-left02.svg),
+		url(../image/SVG/backgrand/download_back-right02.svg);
+	background-position: top 0 left calc(50% - 444px),
+		bottom right calc(50% - 444px);
+}
+.event_back {
+	background-image: url(../image/SVG/backgrand/life_event-back.svg);
+	background-position: center;
+}
+.nursing_back {
+	background-image: url(../image/SVG/backgrand/nursing_back.svg);
+	background-position: top center;
+}
+.feature_back {
+	background-image: url(../image/SVG/backgrand/feature_back.svg);
+	background-position: center;
+}
+.flow-back,
+.contact_back {
+	background-image: url(../image/SVG/backgrand/contact_back.svg);
+	background-position: center;
+}
+.back {
+	background-repeat: no-repeat;
+	@include lg {
+		background: none;
+	}
+}
+.instagram {
+	.back.top-instagram {
+		position: relative;
+		.baby img{
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			left: calc(50% - 680px);
+			@include xl {
+				bottom: 95px;
+				left: 16px;
+			}
+		}
+	}
+}
+

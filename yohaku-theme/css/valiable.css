@@ -1,0 +1,38 @@
+:root {
+    /* 認定こども園用 */
+    --childrens_color1: #26333b;
+    --childrens_color2: rgba(38, 51, 59, 0.3);
+    --childrens_color3: rgba(38, 51, 59, 0.1);
+    --childrens_color4: #8db987;
+    --childrens_color5: #FFFFFF;
+    --childrens_color6: rgba(255, 255, 255, 0.9);
+    --childrens_color7: rgba(255, 255, 255, 0.5);
+    --childrens_color8: #deebdc;
+    /* 学童クラブ用 */
+    --afterschool_color1: #26333b;
+    --afterschool_color2: rgba(38, 51, 59, 0.5);
+    --afterschool_color3: #486749;
+    --afterschool_color4: rgba(72, 103, 73, 0.6);
+    --afterschool_color5: #C8D2C9;
+    --afterschool_color6: #ffffff;
+    --afterschool_color7: rgba(255, 255, 255, 0.5);
+    --afterschool_color7: rgba(255, 255, 255, 0.4);
+    /* 全園共通 */
+    --all-color1: #26333b;
+    --all-color2: #FFFFFF;
+    --all-color3: rgba(38, 51, 59, 0.5);
+    /* 保育園 */
+    --preschool_color1: #26333b;
+    --preschool_color2: rgba(38, 51, 59, 0.1);
+    --preschool_color3: #D5C770;
+    --preschool_color4: #FFFFFF;
+    --preschool_color5: rgba(255, 255, 255, 0.5);
+    --preschool_color6: #F2F0E0;
+    /* 小規模保育 */
+    --smallscale_color1: #26333b;
+    --smallscale_color2: rgba(38, 51, 59, 0.1);
+    --smallscale_color3: #DEA1A1;
+    --smallscale_color4: #FFFFFF;
+    --smallscale_color5: rgba(255, 255, 255, 0.5);
+    --smallscale_color6: #F8EBEB;
+}

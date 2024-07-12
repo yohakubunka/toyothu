@@ -1,0 +1,420 @@
+#section-recruit-visit {
+    .wpcf7-spinner {
+        display: none;
+    }
+    .black-border-button {
+        text-align: center;
+    }
+}
+#entry,
+#section-recruit-visit {
+    background-color: $color6;
+    .entry-title {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .entry-back,
+    .visit-back {
+        background-image: url(../images/illust_entry.svg);
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include lg {
+            background-image: none;
+        }
+        .selected-recruit {
+            background-color: $color5;
+            margin-top: 56px;
+            padding: 40px;
+            max-width: 812px;
+            height: 280px;
+            margin: 0 auto;
+            border-radius: 40px;
+            margin-bottom: 48px;
+            @include sm {
+                padding: 16px;
+                border-radius: 20px;
+            }
+            &__area {
+                height: 100%;
+                overflow-y: scroll;
+                padding-right: 8px;
+                &::-webkit-scrollbar {
+                    width: 4px;
+                    height: 100px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $color3;
+                    border-radius: 5px;
+                }
+                &::-webkit-scrollbar-track {
+                    background-color: $color9;
+                }
+                .selected-recruit-item {
+                    .selected-recruit-item__titles {
+                        @include flex();
+                        align-items: flex-start;
+                        flex-direction: column;
+                        &__area {
+                            @include sm {
+                                margin-right: 16px;
+                            }
+                        }
+                        .item__right--category {
+                            @include flex();
+                            margin-bottom: 16px;
+                            @include sp {
+                                flex-wrap: wrap;
+                                margin-bottom: 8px;
+                            }
+                            .cat-name {
+                                margin-right: 32px;
+                                @include sp {
+                                    margin-right: 24px;
+                                }
+                            }
+                        }
+                    }
+                    .selected-recruit-detail {
+                        margin-top: 24px;
+                        padding-top: 24px;
+                        border-bottom: 4px solid;
+                        border-image-source: url(../images/line-dot.png);
+                        border-image-slice: 100% 0 0;
+                        border-image-repeat: space;
+                        border-image-width: auto;
+                        &__row {
+                            @include flex();
+                            padding-bottom: 24px;
+                            &:last-child {
+                                padding-bottom: 0;
+                            }
+                            @include sm {
+                                flex-direction: column;
+                                padding-bottom: 16px;
+                            }
+                            &--title {
+                                max-width: 80px;
+                                width: 100%;
+                                margin-right: 32px;
+                                font-weight: 600;
+                                @include sm {
+                                    margin-bottom: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .entry-form,
+        .visit-form {
+            .contact-attension {
+                max-width: 804px;
+                width: 100%;
+                margin: 0 auto;
+                &__text {
+                    padding-bottom: 4px;
+                    text-indent: -1.5em;
+                    padding-left: 2em;
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                    svg {
+                        margin-right: 8px;
+                    }
+                }
+            }
+            // CF7のスタイリング
+            .form-area {
+                margin-top: 24px;
+                border-radius: 40px;
+                padding: 40px;
+                background-color: $color1;
+                @include sm {
+                    border-radius: 20px;
+                    padding: 16px;
+                }
+                .hide-text {
+                    display: none !important;
+                }
+                .required {
+                    margin-left: 16px;
+                    color: #dc3232;;
+                }
+                .form-item {
+                    margin-bottom: 32px;
+                    &__title {
+                        margin-bottom: 16px;
+                    }
+                    &__input {
+                        padding-bottom: 8px;
+                        border-bottom: 4px solid;
+                        border-image-source: url(../images/line-dot.png);
+                        border-image-slice: 0 0 100%;
+                        border-image-repeat: space;
+                        border-image-width: auto;
+                        .input-width {
+                            width: 100%;
+                        }
+                    }
+                    textarea {
+                        width: 100%;
+                        height: 184px;
+                        font-size: 1.6rem;
+                        line-height: 1.7;
+                        letter-spacing: 0.08em;
+                        font-family: "Noto Sans JP", sans-serif;
+                        font-weight: 500;
+                        color: $color3;
+                        resize: vertical;
+                        @include sm {
+                            font-size: 1.4rem;
+                            height: 160px;
+                        }
+                        &::placeholder {
+                            color: $color4;
+                        }
+                    }
+                }
+                .test-date {
+                    padding-bottom: 8px;
+                    border-bottom: 4px solid;
+                    border-image-source: url(../images/line-dot.png);
+                    border-image-slice: 0 0 100%;
+                    border-image-repeat: space;
+                    border-image-width: auto;
+                    margin-bottom: 24px;
+                    .test-date-required {
+                        input {
+                            color: $color4;
+                        }
+                    }
+                    .test-date-esired {
+                        margin-bottom: 8px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .form-text {
+                    margin-bottom: 0;
+                }
+                .form-radio {
+                    margin-bottom: 24px;
+                    .wpcf7-list-item {
+                        margin: 0 32px 0 0;
+                    }
+                    input[type="radio"] {
+                        position: absolute;
+                        opacity: 0;
+                    }
+                    .wpcf7-list-item-label:before {
+                        content: "";
+                        border-radius: 100%;
+                        border: 1px solid $color3;
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        position: relative;
+                        top: -2px;
+                        margin-right: 7px;
+                        vertical-align: middle;
+                        // cursor: pointer;
+                        text-align: center;
+                        -webkit-transition: all 250ms ease;
+                        transition: all 250ms ease;
+                        @include sm {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                    input[type="radio"]:checked + .wpcf7-list-item-label:before {
+                        background-color: $color3;
+                    }
+                }
+                // 施設見学フォーム用
+                .form-visitdate {
+                    padding-bottom: 8px;
+                    border-bottom: 4px solid;
+                    border-image-source: url(../images/line-dot.png);
+                    border-image-slice: 0 0 100%;
+                    border-image-repeat: space;
+                    border-image-width: auto;
+                    margin-bottom: 24px;
+                    .title-with-icon {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-right: 16px;
+                        .arrow {
+                            border-style: solid;
+                            border-width: 16px 12px 0 12px;
+                            border-color: $color3 transparent transparent transparent;
+                            transition: all .6s;
+                            @include sm {
+                                border-width: 10px 8px 0 8px;
+                            }
+                        }
+                        &.open {
+                            .arrow {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                    .ac-child {
+                        display: none;
+                    }
+                    .select-facility {
+                        margin-bottom: 24px;
+                        .wpcf7-list-item {
+                            margin: 0 32px 0 0;
+                        }
+                        input[type="radio"] {
+                            position: absolute;
+                            opacity: 0;
+                        }
+                        .wpcf7-list-item-label:before {
+                            content: "";
+                            border-radius: 100%;
+                            border: 1px solid $color3;
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                            position: relative;
+                            top: -2px;
+                            margin-right: 7px;
+                            vertical-align: middle;
+                            // cursor: pointer;
+                            text-align: center;
+                            -webkit-transition: all 250ms ease;
+                            transition: all 250ms ease;
+                            @include sm {
+                                width: 12px;
+                                height: 12px;
+                            }
+                        }
+                        input[type="radio"]:checked + .wpcf7-list-item-label:before {
+                            background-color: $color3;
+                        }
+                    }
+                    input {
+                        &::placeholder {
+                            color: $color4;
+                        }
+                    }
+                }
+                .visit-date {
+                    padding-bottom: 8px;
+                    .test-date-required {
+                        input {
+                            color: $color4;
+                        }
+                    }
+                    .test-date-esired {
+                        margin-bottom: 8px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            .privacy-policy {
+                margin-top: 24px;
+                border-radius: 40px;
+                padding: 40px;
+                background-color: $color1;
+                height: 368px;
+                @include sm {
+                    border-radius: 20px;
+                    padding: 16px;
+                    height: 240px;
+                }
+                &__area {
+                    height: 100%;
+                    overflow-y: scroll;
+                    padding-right: 8px;
+                    &::-webkit-scrollbar {
+                        width: 4px;
+                        height: 100px;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background: $color3;
+                        border-radius: 5px;
+                    }
+                    &::-webkit-scrollbar-track {
+                        background-color: $color9;
+                    }
+                    .policy-title {
+                        font-weight: 600;
+                    }
+                    .policy-bottom {
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+            .agree-button {
+                text-align: center;
+                padding: 24px 0 48px 0;
+                @include sm {
+                    padding: 24px 0 32px 0;
+                }
+                //チェックボックスのスタイル↓↓↓↓↓↓↓↓↓↓
+                .wpcf7-list-item {
+                    margin: 0;
+                }
+                input[type="checkbox"] {
+                    position: absolute;
+                    opacity: 0;
+                    /*既存のチェックボックスを見えなくする*/
+                }
+                .wpcf7-list-item-label:before {
+                    /*チェックボックスの枠*/
+                    content: "";
+                    border: 1px solid $color3;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    position: relative;
+                    top: -2px;
+                    margin-right: 8px;
+                    vertical-align: middle;
+                    // cursor: pointer;
+                    text-align: center;
+                    @include sm {
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+                input[type="checkbox"]:checked ~ .wpcf7-list-item-label:after {
+                    // チェックボックスクリック
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    box-sizing: border-box;
+                    width: 16px;
+                    height: 16px;
+                    margin-top: -8px;
+                    top: 12px;
+                    left: 0;
+                    background-color: $color3;
+                    @include sm {
+                        height: 12px;
+                        width: 12px;
+                    }
+                }
+            }
+            .hide-button {
+                display: none;
+            }
+            #submit-button[disabled] {
+                cursor: not-allowed;
+                /* 禁止カーソル */
+            }
+        }
+    }
+    .visit-back  {
+        background-size: auto;
+        background-position: top;
+    }
+}

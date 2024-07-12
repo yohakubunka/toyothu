@@ -1,0 +1,74 @@
+html  {
+    body {
+        background-color: var(--preschool_color6);
+    }
+}
+.animation ,
+#life .recruit-day-flow__content--time h3,
+.linebox__title p{
+    background-color: var(--preschool_color6);
+}
+header {
+    .hamburger__inner ol {
+        background: var(--preschool_color3);
+    }
+    .insidemenu {
+        background-color:var(--preschool_color3);
+    }
+}
+#front section.back.last .twoflex .check-box .seemore,
+#front section.back.last .twoflex .check-box .check-inner{
+    background-color: var(--preschool_color6);
+    &.hover {
+        background: var(--preschool_color3);
+    }
+}
+svg{
+    .baby_color {
+        fill: var(--preschool_color6);
+      }
+}
+footer  {
+    .footer__menu {
+        background-color: var(--preschool_color3);
+    }
+    .footer__inner--box {
+        background-color: var(--preschool_color3);
+
+    }
+    .footer__inner--banner {
+        ul {
+            li {
+                a {
+                    color: var(--preschool_color3);
+                    border-color: var(--preschool_color3);
+                }
+            }
+        }
+    }
+
+}
+.followmenu{
+    @include sm{
+        background: var(--preschool_color3);
+    }
+}
+.oddflex {
+	&__box {
+		&::before {
+			background-image: url(../image/SVG/backgrand/box-top02.svg);
+			top: 0;
+		}
+		&::after {
+			background-image: url(../image/SVG/backgrand/box-bottom02.svg);
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
+footer{
+    background-color: var(--preschool_color6);
+}
+footer .footer{
+    background-color: var(--preschool_color2);
+}

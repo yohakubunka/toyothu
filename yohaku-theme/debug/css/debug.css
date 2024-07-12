@@ -1,0 +1,470 @@
+#debug-toolbar {
+  /* desert scheme ported from vim to google prettify */
+  /* string  - pink */
+  /* comment - skyblue */
+  /* type    - lightgreen */
+  /* literal - darkred */
+  /* punctuation */
+  /* plaintext */
+  /* html/xml tag    - lightyellow */
+  /* attribute name  - khaki */
+  /* attribute value - pink */
+  /* decimal         - lightgreen */
+  /* Specify class=linenums on a pre to get line numbering */
+  /* IE indents via margin-left */
+  /* Alternate shading for lines */
+}
+#debug-toolbar pre.prettyprint {
+  display: block;
+  background-color: none;
+  border: 0 !important;
+  padding: 16px;
+}
+#debug-toolbar pre.prettyprint.border {
+  border: 1px solid #878787 !important;
+}
+#debug-toolbar pre .nocode {
+  background-color: none;
+  color: #000;
+}
+#debug-toolbar pre .str {
+  color: #ffa0a0;
+}
+#debug-toolbar pre .kwd {
+  color: #f0e68c;
+  font-weight: bold;
+}
+#debug-toolbar pre .com {
+  color: #87ceeb;
+}
+#debug-toolbar pre .typ {
+  color: #98fb98;
+}
+#debug-toolbar pre .lit {
+  color: #cd5c5c;
+}
+#debug-toolbar pre .pun {
+  color: #fff;
+}
+#debug-toolbar pre .pln {
+  color: #fff;
+}
+#debug-toolbar pre .tag {
+  color: #f0e68c;
+  font-weight: bold;
+}
+#debug-toolbar pre .atn {
+  color: #bdb76b;
+  font-weight: bold;
+}
+#debug-toolbar pre .atv {
+  color: #ffa0a0;
+}
+#debug-toolbar pre .dec {
+  color: #98fb98;
+}
+#debug-toolbar ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #aeaeae;
+}
+#debug-toolbar li.L0,
+#debug-toolbar li.L1,
+#debug-toolbar li.L2,
+#debug-toolbar li.L3,
+#debug-toolbar li.L5,
+#debug-toolbar li.L6,
+#debug-toolbar li.L7,
+#debug-toolbar li.L8 {
+  list-style-type: none;
+}
+@media print {
+  #debug-toolbar pre.prettyprint {
+    background-color: none;
+  }
+  #debug-toolbar pre .str,
+#debug-toolbar code .str {
+    color: #060;
+  }
+  #debug-toolbar pre .kwd,
+#debug-toolbar code .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+  #debug-toolbar pre .com,
+#debug-toolbar code .com {
+    color: #600;
+    font-style: italic;
+  }
+  #debug-toolbar pre .typ,
+#debug-toolbar code .typ {
+    color: #404;
+    font-weight: bold;
+  }
+  #debug-toolbar pre .lit,
+#debug-toolbar code .lit {
+    color: #044;
+  }
+  #debug-toolbar pre .pun,
+#debug-toolbar code .pun {
+    color: #440;
+  }
+  #debug-toolbar pre .pln,
+#debug-toolbar code .pln {
+    color: #000;
+  }
+  #debug-toolbar pre .tag,
+#debug-toolbar code .tag {
+    color: #006;
+    font-weight: bold;
+  }
+  #debug-toolbar pre .atn,
+#debug-toolbar code .atn {
+    color: #404;
+  }
+  #debug-toolbar pre .atv,
+#debug-toolbar code .atv {
+    color: #060;
+  }
+}
+
+#debug-toolbar {
+  position: fixed;
+  bottom: 0;
+  background-color: #212121;
+  color: #d1d1d1;
+  width: 100%;
+  font-family: input-mono, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+#debug-toolbar .info {
+  color: #1976d2;
+}
+#debug-toolbar .primary {
+  color: #7e57c2;
+}
+#debug-toolbar .error {
+  color: #d32f2f;
+}
+#debug-toolbar .warning {
+  color: #fbc02d;
+}
+#debug-toolbar .success {
+  color: #00796b;
+}
+#debug-toolbar .gradation, #debug-toolbar .toolbar--menu__items a:hover, #debug-toolbar .tool-name {
+  background: -webkit-linear-gradient(284deg, #065ef6, #54a1c5, #34eba5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#debug-toolbar table {
+  width: 100%;
+}
+#debug-toolbar table tbody,
+#debug-toolbar table thead {
+  width: 100%;
+}
+#debug-toolbar table tbody tr,
+#debug-toolbar table thead tr {
+  width: 100%;
+}
+#debug-toolbar table tbody tr:nth-child(even),
+#debug-toolbar table thead tr:nth-child(even) {
+  background-color: black;
+}
+#debug-toolbar table tbody tr th,
+#debug-toolbar table tbody tr td,
+#debug-toolbar table thead tr th,
+#debug-toolbar table thead tr td {
+  font-size: 14px;
+  padding: 0.75em;
+  border: 1px solid #878787;
+}
+#debug-toolbar table tbody tr th,
+#debug-toolbar table thead tr th {
+  min-width: 300px;
+}
+#debug-toolbar table tbody tr td,
+#debug-toolbar table thead tr td {
+  max-width: 1320px;
+}
+#debug-toolbar table thead tr {
+  background-color: black;
+}
+#debug-toolbar table.w-initial tr th,
+#debug-toolbar table.w-initial tr td {
+  width: initial;
+}
+#debug-toolbar .tool-name {
+  font-size: 22px;
+  font-family: bungee, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  cursor: pointer;
+}
+#debug-toolbar .toolbar--menu {
+  height: 56.67px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 16px;
+}
+#debug-toolbar .toolbar--menu__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#debug-toolbar .toolbar--menu__items a {
+  margin-right: 1em;
+}
+#debug-toolbar .toolbar--menu__items a:hover {
+  cursor: pointer;
+}
+#debug-toolbar .toolbar--content {
+  max-height: calc(100vh - 56.67px - 32px);
+  padding: 16px;
+  padding-top: 40px;
+  border-bottom: 3px solid #141414;
+  overflow-y: auto;
+  display: none;
+}
+#debug-toolbar .toolbar--content .section-wrap {
+  margin-bottom: 50px;
+}
+#debug-toolbar .toolbar--content .section-wrap .toggle-trigger {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+#debug-toolbar .toolbar--content .section-wrap .toggle-trigger::after {
+  content: "+";
+  font: 18px;
+}
+#debug-toolbar .toolbar--content .section-wrap .toggle-trigger.hide::after {
+  content: "-";
+}
+#debug-toolbar .toolbar--content .section-wrap .toggle {
+  display: none;
+}
+#debug-toolbar .toolbar--content .section-wrap:first-of-type .toggle {
+  display: block;
+}
+#debug-toolbar .toolbar--content .section-wrap:first-of-type .toggle-trigger::after {
+  content: "-";
+}
+#debug-toolbar .toolbar--content .section-wrap:first-of-type .toggle-trigger.hide::after {
+  content: "+";
+}
+#debug-toolbar .toolbar--content .hide-content .toggle-trigger {
+  padding: 10px 0;
+  cursor: pointer;
+}
+#debug-toolbar .toolbar--content .hide-content .toggle-trigger::after {
+  display: none;
+}
+#debug-toolbar .toolbar--content .hide-content .this-content {
+  display: none;
+}
+#debug-toolbar .toolbar--content.check .section-wrap .toggle {
+  display: block;
+}
+#debug-toolbar .toolbar--content.check .section-wrap .toggle-trigger::after {
+  content: "-";
+}
+#debug-toolbar .toolbar--content.check .section-wrap .toggle-trigger.hide::after {
+  content: "+";
+}
+#debug-toolbar .toolbar--content__readme h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+#debug-toolbar .toolbar--content__readme h2 {
+  font-size: 20px;
+  margin: 30px 0;
+  padding-left: 10px;
+  font-weight: 600;
+  border-left: 5px solid #bababa;
+}
+#debug-toolbar .toolbar--content__readme h3 {
+  font-size: 18px;
+  margin: 15px 0;
+}
+#debug-toolbar .toolbar--content__readme p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+#debug-toolbar .toolbar--content__readme table {
+  margin-bottom: 15px;
+}
+#debug-toolbar #link_check_wrapper tr td,
+#debug-toolbar #link_check_wrapper tr th {
+  width: initial;
+}
+#debug-toolbar #google-search-results h2 {
+  font-size: 20px;
+  line-height: 26px;
+}
+#debug-toolbar #google-search-results p {
+  font-size: 14px;
+}
+#debug-toolbar #e-o-w-f-b button {
+  margin-bottom: 10px;
+}
+#debug-toolbar #e-o-w-f-b table {
+  display: none;
+}
+#debug-toolbar #e-o-w-f-b table tr td,
+#debug-toolbar #e-o-w-f-b table tr th {
+  width: initial;
+}
+#debug-toolbar .help-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+#debug-toolbar .help-wrapper .nav {
+  max-width: 300px;
+  width: 100%;
+}
+#debug-toolbar .help-wrapper .texts-wrapper .text-wrap {
+  margin-bottom: 100px;
+  padding-left: 40px;
+  border-left: 3px solid #545454;
+}
+#debug-toolbar .help-wrapper .texts-wrapper .text-wrap h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+#debug-toolbar .help-wrapper .texts-wrapper .text-wrap p {
+  font-size: 14px;
+  padding: 15px 0;
+  letter-spacing: 0.07em;
+}
+#debug-toolbar .help-wrapper .texts-wrapper .text-wrap pre {
+  margin: 10px 0;
+}
+
+#debug-modal-window {
+  display: none;
+}
+#debug-modal-window .wrapper {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 120vw;
+  height: 120vh;
+  background-color: rgba(33, 33, 33, 0.8);
+}
+#debug-modal-window .inner {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  left: 50%;
+  padding: 25px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(33, 33, 33, 0.8);
+  border-radius: 5px;
+}
+#debug-modal-window .inner .logo {
+  text-align: center;
+  font-size: 45px;
+  font-family: bungee, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  margin-bottom: 50px;
+  background: -webkit-linear-gradient(284deg, #065ef6, #54a1c5, #34eba5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#debug-modal-window .inner .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+#debug-modal-window .inner .flex .item {
+  padding: 0 25px;
+  max-width: 350px;
+}
+#debug-modal-window .inner .flex .item p.link {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#debug-modal-window .inner .flex .item p.link a {
+  font-size: 80px;
+  background: -webkit-linear-gradient(284deg, #065ef6, #54a1c5, #34eba5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#debug-modal-window .inner .flex .item p.title {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #b8b8b8;
+  font-weight: 600;
+}
+#debug-modal-window .inner .flex .item p.text {
+  font-size: 12px;
+  text-align: center;
+  color: #b8b8b8;
+}
+#debug-modal-window .inner .flex .item p.text a {
+  background: -webkit-linear-gradient(284deg, #065ef6, #54a1c5, #34eba5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#debug-modal-window .inner .copy {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 30px;
+  color: #d1d1d1;
+}
+#debug-modal-window .inner .close {
+  text-align: right;
+  font-size: 16px;
+  color: #b8b8b8;
+  cursor: pointer;
+}
+/*# sourceMappingURL=debug.css.map */

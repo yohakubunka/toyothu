@@ -1,0 +1,1210 @@
+//消さないでください----------------
+.dummy-file-content,
+.document-file,
+.btn-content {
+  display: none;
+}
+
+#confimation {
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}
+
+//後で消す----------------
+// .basic-confirm {
+//   padding-bottom: 80px;
+// }
+// .set-confirm {
+//   padding-bottom: 56px;
+// }
+// .application-confirm {
+//   padding-bottom: 40px;
+//   background-color: #fff;
+// }
+// .career-confirm {
+//   background-color: #e6c0c0;
+// }
+
+//退職社ページ　css追記_2022/03/16　瀬戸
+#retired {
+
+  //ご案内
+  .speech-mark {
+    .speech {
+      svg {
+        @include sp {
+          width: 100%;
+          max-width: 240px;
+        }
+
+        path {
+          fill: $color1;
+          stroke: $color1;
+        }
+      }
+    }
+  }
+
+  .houjin-guidance {
+    &__content {
+      .guide {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 40px;
+
+        &__pic {
+          @include flex(start);
+          border-bottom: solid 2px $color5;
+
+          &:last-child {
+            border: none;
+          }
+
+          @include lg {
+            @include flex(center, center, 0, 0, 1);
+          }
+
+          &--label {
+            max-width: 182px;
+            width: 100%;
+            background-color: $color4;
+            color: $color1;
+            font-weight: 700;
+            @include flex(start, center);
+            padding: 24px 0 24px 24px;
+            border-right: solid 2px $color5;
+
+            @include lg {
+              max-width: 100%;
+              border-right: none;
+            }
+          }
+
+          &--box {
+            max-width: 100%;
+            width: 100%;
+            padding: 24px;
+            background-color: $color1;
+
+            .document_detail {
+              color: $color4;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //申請手順
+  .houjin-applicationprocedure {
+    &__content {
+      .request {
+        max-width: 100%;
+        width: 100%;
+
+        &__pic {
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 50px;
+          @include flex(center, start);
+          position: relative;
+
+          @include lg {
+            @include flex(center, start, 0, 0, 1);
+          }
+
+          &::before {
+            content: "";
+            width: 40px;
+            height: 35px;
+            background-color: $color1;
+            clip-path: polygon(0 0, 100% 0%, 50% 100%);
+            position: absolute;
+            bottom: -32px;
+            left: 80px;
+          }
+
+          &--title {
+            max-width: 360px;
+            width: 100%;
+            padding-right: 40px;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: $color4;
+
+            @include lg {
+              padding: 0 0 16px 0;
+            }
+
+            @include sm {
+              font-size: 2rem;
+            }
+
+            .number {
+              padding-right: 32px;
+            }
+          }
+
+          &--box {
+            max-width: 100%;
+            width: 100%;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //申請フォーム
+  .houjin-form {
+    &__basic {
+      max-width: 100%;
+      width: 100%;
+      @include flex(start, start);
+
+      @include lg {
+        @include flex(center, center, 0, 0, 1);
+      }
+    }
+
+    //申請-1
+    #careerform {
+      padding-top: 64px;
+
+      .houjin-form__documentset {
+        &--inner {
+          @include flex(start, start);
+          position: relative;
+          padding-bottom: 22px;
+          margin-bottom: 27px;
+
+          @include lg {
+            @include flex(center, center, 0, 0, 1);
+          }
+
+          .career-add {
+            max-width: 200px;
+            width: 100%;
+            font-weight: 700;
+            height: 44px;
+            @include flex(center, center);
+            color: $color4;
+            background-color: $color1;
+            border: 2px solid $color4;
+            border-radius: 40px;
+            position: absolute;
+            bottom: 0;
+            right: 40px;
+
+            @include sm {
+              right: 16px;
+            }
+
+            cursor: pointer;
+
+            &::before {
+              content: "";
+              width: 15px;
+              height: 15px;
+              margin-right: 8px;
+              background-image: url(../images/plus.svg);
+              background-size: cover;
+            }
+          }
+        }
+      }
+
+      //申請を追加する
+      .document-add {
+        max-width: 312px;
+        width: 100%;
+        height: 64px;
+        margin: 0 auto;
+        border: 4px solid $color4;
+        @include flex(center, center);
+        color: $color4;
+        font-weight: 700;
+        border-radius: 40px;
+        transition: 0.3s;
+        cursor: pointer;
+        font-size: 2.4rem;
+
+        &:hover {
+          border: none;
+          background-color: $color4;
+          color: $color1;
+          transition: 0.3s;
+        }
+
+        @include sm {
+          height: 56px;
+          font-size: 2rem;
+        }
+      }
+
+      //プライバシーポリシー
+      .privacy {
+        &__content {
+          &--inner {
+            height: 368px;
+
+            .inner {
+              height: 100%;
+              overflow-y: scroll;
+
+              &::-webkit-scrollbar {
+                width: 4px;
+                border-radius: 10px;
+                background: $color11;
+                padding-right: 40px;
+              }
+
+              &::-webkit-scrollbar-track {
+                background: transparent;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background: $color4;
+              }
+            }
+          }
+        }
+      }
+
+      //「確認する」ボタン
+      .confilm-btn {
+        @include button;
+        font-weight: 700;
+        margin-top: 48px;
+        cursor: pointer;
+
+        @include sm {
+          font-size: 2rem;
+          height: 56px;
+        }
+      }
+    }
+
+    .mail_check_alart {
+      padding-top: 24px;
+      color: red;
+      text-align: center;
+    }
+  }
+
+  //確認画面
+  #confimation {
+    .confirm-flex {
+      max-width: 100%;
+      width: 100%;
+      position: relative;
+      @include flex(between, start);
+
+      @include lg {
+        @include flex(center, center, 0, 0, 1);
+      }
+
+      //申請者の基本情報
+      .confirm-box {
+        max-width: calc(736px + 40px);
+        padding-right: 40px;
+        width: 100%;
+
+        @include lg {
+          max-width: 768px;
+          padding: 0;
+        }
+
+        .left-title {
+          padding-bottom: 24px;
+        }
+
+        .app-edit {
+          @include flex(end);
+          padding-top: 24px;
+          font-weight: 700;
+
+          a {
+            color: $color4;
+            border-bottom: 1px solid $color4;
+          }
+        }
+
+        //申請確認
+        .confilm-wrap {
+          .set-confir {
+            .application-confirm {
+              .confirm_pic {
+                position: relative;
+                padding-bottom: 8px;
+                margin-bottom: 32px;
+                border-bottom: 4px solid;
+                border-image-source: url(../images/line.png);
+                border-image-slice: 0 0 100%;
+                border-image-repeat: unset;
+                border-image-width: auto;
+              }
+            }
+          }
+        }
+      }
+
+      //料金
+      .price {
+        max-width: 392px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        right: 0;
+
+        .left-title {
+          padding-bottom: 24px;
+        }
+
+        @include lg {
+          max-width: 768px;
+          position: inherit;
+          padding-top: 16px;
+        }
+      }
+    }
+
+    //送信・修正ボタン
+    .confilmbtn-flex {
+      max-width: calc(100% - 48px);
+      padding-top: 48px;
+      margin: 0 auto;
+      @include flex(center, center);
+
+      @include sp {
+        @include flex(center, center, 0, 0, 1);
+      }
+
+      .submit_btn,
+      .fix_btn {
+        @include button;
+        margin: 0 0 0 24px;
+
+        @include sm {
+          font-size: 2rem;
+          height: 56px;
+        }
+
+        @include sp {
+          margin: 0;
+        }
+      }
+
+      //修正ボタン
+      .fix_btn {
+        margin: 0 24px 0 0;
+        color: $color2;
+        border: solid 4px $color2;
+
+        &::before {
+          right: auto;
+          background-image: url(../images/gray_rect.svg);
+          transition: none;
+          left: 16px;
+        }
+
+        &:hover {
+          background-color: $color2;
+
+          &::before {
+            background-image: url(../images/W_rect.svg);
+            transform: rotate(180deg);
+            transition: none;
+          }
+        }
+
+        @include sp {
+          margin: 0 0 24px 0;
+        }
+      }
+    }
+  }
+
+  //コンタクトフォーム　共通パーツ
+  //左のタイトル
+  .app-count_wrap,
+  .left-title {
+    max-width: 280px;
+    width: 100%;
+    padding-right: 24px;
+    flex-shrink: 0;
+    font-size: 2.4rem;
+    color: $color4;
+    font-weight: 700;
+
+    @include lg {
+      text-align: center;
+      position: relative;
+      max-width: 100%;
+      padding: 0 0 24px 0;
+    }
+
+    @include sm {
+      font-size: 2rem;
+    }
+
+    .content_delete {
+      cursor: pointer;
+      font-size: 1.8rem;
+      max-width: max-content;
+      border-bottom: 1px solid $color4;
+    }
+  }
+
+  .app-count_wrap {
+    p.content_delete {
+      @include lg {
+        position: absolute;
+        right: 16px;
+        top: 0;
+        font-size: 1.8rem;
+        border-bottom: 1px solid $color4;
+      }
+
+      @include sp {
+        position: inherit;
+        padding-top: 16px;
+        right: auto;
+        margin: 0 auto;
+      }
+    }
+
+    p.addset_header {
+      padding-bottom: 24px;
+
+      @include lg {
+        padding: 0;
+      }
+    }
+  }
+
+  //フォームの設定
+  .document-set__application,
+  .document-set__career,
+  .precautions__content--inner,
+  .privacy__content--inner,
+  .basic-confirm__content,
+  .price__content,
+  .application-confirm,
+  .career-confirm,
+  .wpcf7 {
+    max-width: 100%;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 40px;
+
+    @include sm {
+      border-radius: 20px;
+      padding: 16px;
+    }
+  }
+
+  .document-set__application,
+  .document-set__career,
+  .application-confirm,
+  .career-confirm {
+    position: relative;
+    padding-top: 150px;
+
+    @include sm {
+      padding-top: 72px;
+    }
+
+    .application-confirm__title,
+    .career-confirm__title,
+    .documenttitle {
+      position: absolute;
+      padding: 40px;
+      border-radius: 40px 40px 0 0;
+      color: $color1;
+      text-align: left;
+      background-color: $color4;
+      font-size: 2.4rem;
+      font-weight: 700;
+      width: 100%;
+      top: 0;
+      left: 0;
+
+      @include sm {
+        border-radius: 20px 20px 0 0;
+        padding: 16px;
+        font-size: 2rem;
+        padding: 16px;
+      }
+    }
+  }
+
+  .document-set__application {
+    dl {
+
+      .tenpu,
+      .exampletenpu {
+        .tenpu_error_msg {
+          color: red;
+        }
+      }
+    }
+  }
+
+  .career-confirm,
+  .document-set__career {
+    margin-top: 16px;
+  }
+
+  //フォームの中身
+  .wpcf7-form {
+    dl {
+      dd {
+        .input-group {
+          @include flex(start, center, wrap);
+
+          @include sp {
+            @include flex(start, start, 0, 0, 1);
+          }
+
+          cursor: pointer;
+
+          &-addon {
+            max-width: 135px;
+            width: 100%;
+            height: 42px;
+            @include flex(center, center);
+            background-color: $color3;
+            padding: 8px 16px;
+
+            @include sp {
+              max-width: 100%;
+            }
+          }
+
+          .input_birth {
+            max-width: calc(100% - 135px);
+            width: 100%;
+            height: 42px;
+            padding: 0 24px 0 24px;
+            border: 1px solid $color3;
+
+            @include sm {
+              @include flex(center, center);
+            }
+
+            @include sp {
+              max-width: 100%;
+              padding: 8px 16px;
+            }
+
+            span {
+              width: 100%;
+
+              input {
+                width: 100%;
+              }
+            }
+          }
+
+          @include xs {
+            @include flex(start, start, 0, 0, 1);
+          }
+        }
+      }
+    }
+  }
+
+  .document-set__application,
+  .document-set__career,
+  .wpcf7-form {
+    dl {
+      position: relative;
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+      border-bottom: 4px solid;
+      border-image-source: url(../images/line.png);
+      border-image-slice: 0 0 100%;
+      border-image-repeat: unset;
+      border-image-width: auto;
+
+      @include sm {
+        margin-bottom: 16px;
+        border-image-repeat: repeat;
+        border-image-slice: 0 0 97%;
+      }
+
+      dt {
+        max-width: 100%;
+        width: 100%;
+        @include flex(start, center, wrap);
+        color: $color4;
+        padding-bottom: 16px;
+        font-weight: 700;
+
+        @include sm {
+          padding-bottom: 8px;
+        }
+
+        span.label-name {
+          color: $color4;
+          padding: 0 0 16px 0;
+          font-weight: 700;
+          padding: 0;
+
+          @include sm {
+            padding: 0 0 8px 0;
+          }
+        }
+
+        span {
+          color: $color2;
+          font-weight: 400;
+          padding: 0 0 0 32px;
+        }
+
+        .name-pin,
+        .maidenname-pin,
+        .jusyo-pin,
+        .period-pin,
+        .documentfirst-pin,
+        .documentsecond-pin {
+          width: 100%;
+          max-width: 100%;
+
+          p {
+            font-weight: 400;
+          }
+        }
+      }
+
+      dd {
+
+        textarea::placeholder,
+        input::placeholder {
+          opacity: 0.5;
+        }
+
+        span {
+          max-width: 100%;
+          width: 100%;
+          display: block;
+
+          input {
+            max-width: 100%;
+            width: 100%;
+
+            &::placeholder {
+              opacity: 0.5;
+            }
+          }
+        }
+
+        .workcalendar {
+          max-width: 100%;
+          width: 100%;
+          @include flex(start, center);
+
+          @include xs {
+            @include flex(start, start, 0, 0, 1);
+          }
+
+          p {
+            padding-right: 24px;
+          }
+
+          .input-group {
+            @include flex(start, center);
+          }
+        }
+      }
+
+      dd.year,
+      dd.tenpu,
+      dd.exampletenpu {
+
+        select#year,
+        .dummy-tenpu,
+        .dummy-exmpletenpu {
+          max-width: max-content;
+          color: $color4;
+          border: 1px solid $color4;
+          padding: 0 8px;
+          border-radius: 4px;
+        }
+      }
+
+      dd.comment {
+        padding: 1px;
+
+        textarea {
+          max-width: 100%;
+          width: 100%;
+          height: 240px;
+        }
+      }
+    }
+  }
+
+  .document-set__career {
+    dl {
+
+      &:last-child,
+      &:nth-last-child(3),
+      &:nth-last-child(2) {
+        dt {
+          padding: 0;
+        }
+
+        dd {
+
+          .workcalendar,
+          .check-content {
+            padding-top: 16px;
+
+            @include sm {
+              padding-top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .document-set__career {
+    .delete_career {
+      max-width: max-content;
+      border-bottom: 1px solid #89634a;
+      cursor: pointer;
+
+      @include sm {
+        margin-bottom: 16px;
+      }
+
+      .label-name {
+        color: $color4;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .document-set__application {
+    dl:first-of-type {
+      dt {
+        padding: 0;
+      }
+
+      dd.document {
+        .check-content {
+          padding-top: 16px;
+
+          @include sm {
+            padding-top: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  //確認画面の中身
+  .price__content,
+  .career-confirm,
+  .basic-confirm__content,
+  .application-confirm,
+  .career-confirm {
+    .confirm-pic {
+      position: relative;
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+      border-bottom: 4px solid;
+      border-image-source: url(../images/line.png);
+      border-image-slice: 0 0 100%;
+      border-image-repeat: unset;
+      border-image-width: auto;
+
+      @include sm {
+        margin-bottom: 16px;
+        border-image-repeat: repeat;
+        border-image-slice: 0 0 97%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__label {
+        color: $color4;
+        font-weight: 700;
+        padding-bottom: 16px;
+
+        @include sm {
+          padding-bottom: 8px;
+        }
+      }
+
+      .total {
+        font-family: "Yusei Magic", sans-serif;
+        color: $color2;
+        font-size: 4rem;
+        letter-spacing: 0;
+        line-height: 1.2em;
+        word-break: break-all;
+
+        @include md {
+          font-size: 3.2rem;
+        }
+
+        @include sp {
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    .term-of-office {
+      .calendar-confirm {
+        @include flex(start, center);
+
+        p {
+          padding-right: 24px;
+        }
+      }
+    }
+  }
+
+  .price__content {
+    .confirm-pic {
+      border-image-source: url(../images/middle_line.png);
+
+      @include lg {
+        border-image-source: url(../images/line.png);
+      }
+
+      @include sm {
+        border-image-repeat: repeat;
+        border-image-slice: 0 0 97%;
+      }
+    }
+  }
+
+  //注意事項・プライバシーポリシー
+  .privacy,
+  .precautions {
+    padding-top: 48px;
+    @include flex(center, start);
+
+    @include lg {
+      @include flex(center, center, 0, 0, 1);
+    }
+
+    &__content {
+
+      #privacy_agree,
+      #precautions-agree {
+        padding-top: 24px;
+        @include flex(end, center);
+        color: $color4;
+        font-size: 2.4rem;
+
+        @include sm {
+          font-size: 2rem;
+        }
+
+        @include sp {
+          font-size: 1.6rem;
+        }
+      }
+
+      .privacy-alart,
+      .precautions-alart {
+        text-align: right;
+      }
+    }
+  }
+
+  .privacy {
+    &__content {
+      &--inner {
+        .inner {
+          .privacy-box {
+            p:first-child {
+              font-weight: 700;
+            }
+
+            padding-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  //マーク
+  .question-first,
+  .question-second,
+  .question-third,
+  .question-fourth,
+  .question-fifth,
+  .question-six {
+    width: 26px;
+    height: 26px;
+    @include flex(center, center);
+    margin: 0 0 0 16px;
+    background-color: $color4;
+    color: $color1;
+    border-radius: 100%;
+  }
+}
+
+//ボタンデザイン_カスタマイズ
+//ラジオボタン
+dd.employment,
+dd.gardenname,
+dd.document {
+  @include flex(start, center, wrap);
+
+  @include xs {
+    @include flex(start, start, 0, 0, 1);
+  }
+
+  .check-content {
+    @include flex(start, center);
+    padding-right: 24px;
+
+    input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border-radius: 16px;
+        @include absoluteCenter;
+        border: 1px solid $color2;
+        background-color: $color1;
+      }
+    }
+
+    input[type="radio"]:checked {
+      &::before {
+        background-color: $color2;
+      }
+    }
+
+    span.radio_label {
+      padding: 0 24px 0 8px;
+
+      &:last-child {
+        padding: 0 0 0 8px;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+dd.gardenname {
+  .check-content {
+    padding-right: 32px;
+    padding-bottom: 16px;
+
+    @include sm {
+      padding-bottom: 8px;
+    }
+
+    // &:last-of-type,
+    // &:nth-last-child(2) {
+    //   padding-bottom: 0;
+    // }
+  }
+}
+
+//チェックボタン
+.business {
+  @include flex(start, center, wrap);
+
+  @include xs {
+    @include flex(start, start, 0, 0, 1);
+  }
+
+  .check-content {
+    @include flex(start, center);
+    padding-right: 32px;
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        @include absoluteCenter;
+        border: 1px solid $color2;
+        background-color: $color1;
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      &::before {
+        background-color: $color2;
+      }
+    }
+
+    span.radio_label,
+    span.checkbox_label {
+      padding: 0 24px 0 8px;
+
+      &:last-child {
+        padding: 0 0 0 8px;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+//注意事項
+//プライバシーポリシー
+input#privacy_check,
+input#precautions_check {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+
+  @include sp {
+    width: 16px;
+    height: 16px;
+  }
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    @include absoluteCenter;
+    border: 2px solid $color4;
+    background-color: $color5;
+
+    @include sp {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+input#privacy_check:checked,
+input#precautions_check:checked {
+  &::before {
+    background-color: $color4;
+  }
+}
+
+span.privacy_label,
+span.precautions_label {
+  font-weight: 700;
+  padding-left: 8px;
+}
+
+//　未入力テキスト
+.send-alart,
+.name-alart,
+.birth-alart,
+.email-alart,
+.emailcheck-alart,
+.tel-alart,
+.business-alart,
+.yubin-alart,
+.jusyo-alart,
+.hurigana-alart,
+.birth-alart,
+.stryear-alart,
+.privacy-alart,
+.precautions-alart,
+.confilm-alart {
+  color: red;
+}
+
+.send-alart {
+  text-align: center;
+  padding-top: 16px;
+}
+
+//注意文アラート
+.body_retired {
+  position: relative;
+
+  .confilm-alart {
+    display: none;
+
+    &.open {
+      display: block;
+      position: fixed;
+      left: calc(50% - 600px);
+      bottom: 24px;
+      max-width: 1200px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 40px;
+      z-index: 2;
+      background-color: $color1;
+
+      @include xl {
+        max-width: calc(100% - 48px);
+        left: 24px;
+      }
+
+      @include sm {
+        padding: 16px;
+        border-radius: 20px;
+      }
+
+      @include xs {
+        max-width: calc(100% - 24px);
+        left: 12px;
+      }
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      background-color: #89634a;
+      background-image: url(../images/clause_icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include sm {
+        top: -8px;
+        left: -8px;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        background-size: 14px;
+      }
+    }
+  }
+}

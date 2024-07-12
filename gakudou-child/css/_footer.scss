@@ -1,0 +1,254 @@
+footer {
+    .footer-nav {
+        @include lg {
+            display: none;
+        }
+        &__area {
+            @include flex($justify: center, $align: center);
+            height: 64px;
+            background-color: $color1;
+            li {
+                margin-right: 48px;
+                font-weight: 600;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    .footer-info {
+        background: url(../images/footerbg_illust.png) repeat #91a492;
+        padding-top: 100px;
+        @include sm {
+            padding-top: 64px;
+        }
+        .footer-re {
+            position: relative;
+            z-index: 1;
+        }
+        .footer-info-area {
+            @include flex();
+            border: solid 16px #486749;
+            background-color: $color1;
+            padding: 40px;
+            flex-wrap: wrap;
+            @include xl {
+                padding: 24px;
+            }
+            @include sm {
+                padding: 32px;
+                text-align: center;
+                border: solid 8px #486749;
+            }
+            &__left {
+                margin-right: 24px;
+                @include xl {
+                    margin-right: 16px;
+                }
+                @include sm {
+                    margin: 0;
+                }
+                .logo {
+                    margin-bottom: 24px;
+                    @include sm {
+                        margin-bottom: 16px;
+                    }
+                }
+                .address-code {
+                    display: inline-block;
+                    margin-bottom: 16px;
+                    margin-right: 10px;
+                    @include lg {
+                        margin-bottom: 0;
+                    }
+                }
+                .address-info {
+                    display: inline-block;
+                }
+                .tel-area {
+                    margin-bottom: 8px;
+                    @include flex($align: center);
+                    @include sm {
+                        justify-content: center;
+                        height: 40px;
+                        margin-bottom: 16px;
+                        margin-top: 16px;
+                    }
+                    svg {
+                        @include lg {
+                            width: 33px;
+                        }
+                        @include md {
+                            width: 30px;
+                        }
+                        @include sm {
+                            width: 27px;
+                        }
+                    }
+                    .tel {
+                        margin-left: 16px;
+                        @extend %noto-56-b-b;
+                        white-space: nowrap;
+                        @include lg {
+                            font-size: 2.4rem;
+                        }
+                        @include sp {
+                            font-size: 2.2rem;
+                        }
+                        @include xs {
+                            margin-left: 8px;
+                        }
+                    }
+                    .tel-info {
+                        font-size: 1.6rem;
+                        @include md {
+                            font-size: 1.4rem;
+                        }
+                        @include sp {
+                            font-size: 1.2rem;
+                        }
+                        @include xs {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .reception-time {
+                    // @include flex();
+                    margin-bottom: 24px;
+                    @include xl {
+                        align-items: flex-end;
+                    }
+                    @include sm {
+                        flex-direction: column;
+                        align-items: center;
+                        margin-bottom: 16px;
+                    }
+                    &__holiday {
+                        margin-left: 0;
+                        @include xl {
+                            margin-left: 0;
+                        }
+                        @include sm {
+                            margin: 0;
+                        }
+                    }
+                    .sp-break {
+                        @include sm {
+                            margin-top: 8px;
+                            margin-bottom: 4px;
+                        }
+                    }
+                }
+                .black-border-button {
+                    margin-left: 0;
+                    margin-bottom: 16px;
+                    @include sm {
+                        margin: 0 auto 16px auto;
+                    }
+                    &:last-child {
+                        margin: 0;
+                        @include sm {
+                            margin: 0 auto 0 auto;
+                        }
+                    }
+                    svg {
+                        @include media-max(374px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &__right {
+                margin-left: 24px;
+                position: relative;
+                z-index: 1;
+                border-radius: 40px;
+                -webkit-border-radius: 40px;
+                overflow: hidden;
+                @include xl {
+                    margin-left: 16px;
+                }
+                @include sm {
+                    margin-left: 0;
+                    margin-top: 16px;
+                }
+                @include sp {
+                    border-radius: 20px;
+                    -webkit-border-radius: 20px;
+                }
+                iframe {
+                    border-radius: 40px;
+                    -webkit-border-radius: 40px;
+                    width: 100%;
+                    z-index: 1;
+                    height: 100%;
+                    overflow: hidden;
+                    @include sm {
+                        height: 400px;
+                    }
+                    @include sp {
+                        max-width: 540px;
+                        height: 240px;
+                        border-radius: 20px;
+                        -webkit-border-radius: 20px;
+                    }
+                }
+            }
+            &__right,
+            &__left {
+                width: calc(100% / 2 - 24px);
+                @include xl {
+                    width: calc(100% / 2 - 16px);
+                }
+                @include sm {
+                    width: 100%;
+                }
+            }
+            #page-top {
+                position: absolute;
+                right: 0;
+                top: -62px;
+                z-index: -1;
+                @include sm {
+                }
+                svg {
+                    z-index: 1;
+                    position: relative;
+                }
+                p {
+                    font-size: 1.2rem;
+                    color: $color1;
+                    @extend %noto-10-b-c;
+                    font-weight: 600;
+                    position: absolute;
+                    left: 30%;
+                    z-index: 3;
+                    top: 42px;
+                }
+            }
+        }
+        .other-nav {
+            margin: 0 -8px;
+            margin-top: 32px;
+            @include flex($justify: center);
+            flex-wrap: wrap;
+            @include sm {
+                margin: 0;
+            }
+            .cream-border-button {
+                width: calc(100% / 3 - 16px);
+                margin: 0 calc(16px / 2);
+                @include sm {
+                    max-width: 100%;
+                    width: 100%;
+                    margin: 16px 0 0 0;
+                }
+            }
+        }
+        .copy-write {
+            padding: 24px 0;
+            text-align: center;
+            @extend %noto-12-m-w;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+main#guide {
+	//保育料と諸経費
+	.price {
+		.twoflex {
+			&-box {
+				@include flex(center, center, 0, 0, 1);
+				.price-icon {
+					max-width: 120px;
+					width: 100%;
+					height: 97px;
+					padding-bottom: 16px;
+					@include flex(center, start);
+				}
+				h3 {
+					padding-top: 20px;
+				}
+				p {
+					padding-bottom: 0;
+				}
+				.button {
+					margin-top: 24px;
+				}
+			}
+		}
+	}
+	//入園の流れ
+	.flow {
+		.inner {
+			.accordion {
+				margin-top: 24px;
+				&-title {
+					@include flex(between, center);
+					&.change {
+						&::after {
+							transform: rotate(0deg);
+							transition: 0.5s;
+						}
+					}
+					&::after {
+						content: "";
+						max-width: 56px;
+						width: 100%;
+						height: 56px;
+						transform: rotate(180deg);
+						transition: 0.5s;
+						background-image: url(../image/SVG/icon/accordion_icon.svg);
+						@include sm {
+							max-width: 40px;
+							height: 40px;
+							background-size: contain;
+						}
+					}
+					h3 {
+						line-height: 1em;
+						margin-bottom: 0;
+						@include flex(start, start, 0, 0, 1);
+						span {
+							line-height: 1em;
+							padding-bottom: 16px;
+						}
+					}
+				}
+				&-inner {
+					display: none;
+					ul {
+						margin-top: 24px;
+						@include flex(center, center, 0, 0, 1);
+						&::before {
+							content: "";
+							max-width: 100%;
+							width: 100%;
+							height: 4px;
+							background-image: url(../image/SVG/decoration/boder-line.svg);
+							background-position: left;
+						}
+						li {
+							@include flex(start, center);
+							max-width: 100%;
+							width: 100%;
+							padding-top: 24px;
+							@include sm {
+								@include flex(start, start, 0, 0, 1);
+							}
+							p {
+								&:first-child {
+									max-width: 112px;
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//見学予約
+	.field {
+		.twoflex {
+			&-box {
+				@include flex(center, center, 0, 0, 1);
+				.price-icon {
+					max-width: 120px;
+					width: 100%;
+					height: 90px;
+				}
+				h3 {
+					padding-top: 24px;
+				}
+				p {
+					padding-bottom: 0;
+					text-align: center;
+				}
+				.flex {
+					@include flex(center, center);
+					@include lg {
+						@include flex(center, center, 0, 0, 1);
+					}
+					.flexleft {
+						margin-right: 40px;
+						@include lg {
+							margin-right: 0;
+						}
+					}
+				}
+				.button {
+					margin-top: 24px;
+				}
+			}
+		}
+	}
+}

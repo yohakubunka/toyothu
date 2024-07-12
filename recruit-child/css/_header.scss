@@ -1,0 +1,247 @@
+/*　ハンバーガーボタン */
+
+.hamburger {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    right: 16px;
+    top: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: $color1;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 16px 0 rgba(38, 51, 59, 0.2);
+}
+
+.hamburger span {
+    display: block;
+    @include absoluteCenterX;
+    width: 30px;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
+.hamburger span:nth-child(1) {
+    top: 2px;
+    @include sm {
+        top: 5px;
+    }
+}
+
+.hamburger span:nth-child(2) {
+    top: 10px;
+    @include sm {
+        top: 13px;
+    }
+}
+
+.hamburger span:nth-child(3) {
+    top: 18px;
+    @include sm {
+        top: 21px;
+    }
+}
+
+
+/* ナビ開いてる時のボタン */
+
+.hamburger.active span:nth-child(1) {
+    top: 11px;
+    left: 10px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    z-index: 10;
+    @include sm {
+        top: 14px;
+        left: 11px;
+    }
+    .humb-1 {
+        fill: $color1!important;
+    }
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+@-webkit-keyframes active-hamburger-bar02 {
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes active-hamburger-bar02 {
+    100% {
+        height: 0;
+    }
+}
+
+.hamburger.active span:nth-child(3) {
+    top: 11px;
+    left: 17px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 10;
+    @include sm {
+        top: 14px;
+        left: 17px;
+    }
+    .humb-1 {
+        fill: $color1!important;
+    }
+}
+
+.hamburger::after {
+    position: absolute;
+    top: 81%;
+    left: 77%;
+    display: block;
+    content: '';
+    width: 56px;
+    height: 56px;
+    margin: -45px 0 0 -43px;
+    border-radius: 50%;
+    transition: all .75s;
+}
+
+.hamburger.active::after {
+    background-color: $color6;
+}
+
+nav.globalMenuSp ul li a {
+    display: block;
+    color: $color1;
+    text-decoration: none;
+    position: relative;
+    text-align: left;
+    padding-left: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+nav.globalMenuSp {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    color: $color1;
+    background: $color3;
+    text-align: center;
+    transform: translateX(100%);
+    transition: all 0.6s;
+    max-width: 480px;
+    width: 100%;
+    background-image: url(../images/wood.png);
+    background-repeat: no-repeat;
+    background-position: 257px 480px;
+    background-size: auto;
+    @include sm {
+        background-position: 257px 450px;
+    }
+    @include sp {
+        background-position: 100% 430px;
+    }
+    @include xs {
+        background-position: 150% 430px;
+    }
+    .overflow {
+        overflow-y: scroll;
+        height: 100vh;
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 100px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $color3;
+            border-radius: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $color9;
+        }
+    }
+    .search-button {
+        color: $color1;
+        font-weight: bold;
+        border-radius: 20px;
+        position: relative;
+        background-image: url(../images/search.png);
+        background-repeat: no-repeat;
+        margin-bottom: 32px;
+        width: 100%;
+        height: 64px;
+        padding: 0;
+        @include flex($align: center, $justify: center);
+        @include sp {
+            max-width: 288px;
+        }
+        svg {
+            margin-right: 8px;
+        }
+    }
+}
+
+nav.globalMenuSp ul {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.bg-black {
+    padding: 104px 96px 8px 96px;
+    @include sp {
+        padding: 88px 0 8px 48px;
+    }
+    @include media-max (374px) {
+        padding: 88px 16px 8px 16px;
+    }
+}
+
+.bg-cream {
+    padding: 32px 96px 104px 96px;
+    background-color: $color7;
+    height: 100vh;
+    @include sp {
+        padding: 32px 0 0 44px;
+    }
+    @include media-max (374px) {
+        padding: 32px 16px 8px 16px;
+    }
+}
+
+nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+}
+
+nav.globalMenuSp ul li a:hover {
+    color: #fff;
+}
+
+.left-line {
+    &:before {
+        position: absolute;
+        top: calc(50% - 1px);
+        width: 8px;
+        height: 4px;
+        content: "";
+        border-bottom: solid 4px $color1;
+        left: 0;
+        border-radius: 5px;
+    }
+}
+
+
+/* このクラスを、jQueryで付与・削除する */
+
+nav.globalMenuSp.active {
+    transform: translateX(0%);
+}
